@@ -11,6 +11,7 @@ import GameAdPreview from "./pages/GameAdPreview";
 import Shoppingcart from "./pages/Shoppingcart";
 import RateUser from "./pages/RateUser";
 import SellerProfile from "./pages/SellerProfile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/rateuser" element={<RateUser />} />
         <Route path="/sellerprofile" element={<SellerProfile />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
