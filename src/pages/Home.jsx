@@ -1,12 +1,7 @@
 import Searchbar from "../components/Searchbar";
 
 const Home = () => {
-  return (
-    <div>
-      Home of Second Roll
-      <Searchbar />
-    </div>
-  );
+  return <div className="home-container">Home</div>;
 };
 
 export default Home;
