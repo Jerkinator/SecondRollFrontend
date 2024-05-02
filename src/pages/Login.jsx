@@ -1,11 +1,13 @@
 import ReusableButton from "../components/ReusableButton";
 
 const Login = () => {
-  return;
-  <>
-    <div>Login</div>
-    <ReusableButton>Log in</ReusableButton>
-  </>;
+  return (
+    <>
+      <ReusableButton>Logga in</ReusableButton>
+      <ReusableButton>Registrera</ReusableButton>
+      <ReusableButton>Skapa annons</ReusableButton>
+    </>
+  );
 };
 
 export default Login;

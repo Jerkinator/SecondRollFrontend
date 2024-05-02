@@ -1,7 +1,7 @@
 import "./ReusableButton.css";
 
 const ReusableButton = ({ children }) => {
-  return <div className="reusable-button"></div>;
+  return <button className="reuseable-button">{children}</button>;
 };
 
 export default ReusableButton;
