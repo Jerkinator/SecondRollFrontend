@@ -6,9 +6,11 @@
   font-size: 20px;
   font-family: "Exo 2";
   text-align: center;
-  background-color: rgb(211, 104, 22);
+  background-color: #dd683d;
   color: white;
-  margin: 10px;
+  margin-left: 45px;
+  margin-top: 20px;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
 }

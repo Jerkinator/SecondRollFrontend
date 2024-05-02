@@ -5,3 +5,8 @@ const ReusableButton = ({ children }) => {
 };
 
 export default ReusableButton;
+
+// Example
+// Simply put the text you wish the button to show inside the ReusableButton-component
+// <ReusableButton>Logga in</ReusableButton>
+// <ReusableButton>Registrera</ReusableButton>
