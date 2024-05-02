@@ -21,8 +21,6 @@
     "sellGame sellGame"
     "category category"
     "footer footer";
-
-  background-image: linear-gradient(rgb(75, 73, 91), rgba(140, 135, 135));
 }
 
 /*Header*/
@@ -79,5 +77,5 @@ footer {
 
 .search {
   grid-area: search;
-  width: 390px;
+  width: 100%;
 }
