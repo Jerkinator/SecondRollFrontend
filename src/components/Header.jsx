@@ -1,9 +1,11 @@
 import React from "react";
 
 function Header() {
+
   return (
     <header className="header">
       <div className="logo">
+        <img src="images\mdi_hamburger-menu.png" alt="burger menu" />
         <a href="/">
         <img src="images\logo.png" alt="SecondRoll logo" />
         </a>
