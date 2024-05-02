@@ -13,11 +13,13 @@ import RateUser from "./pages/RateUser";
 import SellerProfile from "./pages/SellerProfile";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Searchbar from "./components/Searchbar";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <Searchbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
