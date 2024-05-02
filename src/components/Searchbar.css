@@ -1,10 +1,4 @@
-.searchbar {
-  width: 100%;
-}
-
 .search-container {
   padding: 5px;
-  margin: 5px;
-  display: grid;
-  background-color: orange;
+  background-image: linear-gradient(rgb(75, 73, 91), rgba(140, 135, 135));
 }

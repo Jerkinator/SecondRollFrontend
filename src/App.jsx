@@ -19,7 +19,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Searchbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

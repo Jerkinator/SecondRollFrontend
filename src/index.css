@@ -21,8 +21,9 @@
     "sellGame sellGame"
     "category category"
     "footer footer";
-}
 
+  background-image: linear-gradient(rgb(75, 73, 91), rgba(140, 135, 135));
+}
 
 /*Header*/
 header {
@@ -36,7 +37,7 @@ header {
   display: grid;
   grid-area: header;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .logo {
@@ -74,4 +75,9 @@ footer {
   bottom: 0;
   left: 0;
   padding-top: 12px;
+}
+
+.search {
+  grid-area: search;
+  width: 390px;
 }
