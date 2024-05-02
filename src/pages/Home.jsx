@@ -1,11 +1,7 @@
-import Filter from "../components/Filter";
+import Searchbar from "../components/Searchbar";
 
 const Home = () => {
-  return (
-    <div className="home-container">
-      <Filter />
-    </div>
-  );
+  return <div className="home-container">Home</div>;
 };
 
 export default Home;
