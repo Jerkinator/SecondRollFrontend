@@ -45,3 +45,11 @@ footer {
   left: 0;
   padding-top: 12px;
 }
+
+.filter-container {
+  grid-area: category;
+}
+
+.dropdown-filter {
+  margin-left: 30px;
+}
