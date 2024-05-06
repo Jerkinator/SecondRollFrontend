@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -17,25 +18,27 @@ import Searchbar from "./components/Searchbar";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Searchbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/create" element={<CreateGameAd />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/gameads" element={<GameAds />} />
-        <Route path="/gameadpreview" element={<GameAdPreview />} />
-        <Route path="/shoppingcart" element={<Shoppingcart />} />
-        <Route path="/rateuser" element={<RateUser />} />
-        <Route path="/sellerprofile" element={<SellerProfile />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Header />
+        <Searchbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/create" element={<CreateGameAd />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gameads" element={<GameAds />} />
+          <Route path="/gameadpreview" element={<GameAdPreview />} />
+          <Route path="/shoppingcart" element={<Shoppingcart />} />
+          <Route path="/rateuser" element={<RateUser />} />
+          <Route path="/sellerprofile" element={<SellerProfile />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

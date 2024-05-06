@@ -23,6 +23,9 @@
     "footer footer";
 }
 
+.login-form {
+  padding-top: 300px;
+}
 
 /*Header*/
 header {
@@ -36,7 +39,7 @@ header {
   display: grid;
   grid-area: header;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .logo {
