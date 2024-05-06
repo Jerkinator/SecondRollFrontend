@@ -1,5 +1,7 @@
+import RolltheDice from "../components/RolltheDiceButton";
+
 const About = () => {
-  return <div>About</div>;
+  return <RolltheDice />;
 };
 
 export default About;
