@@ -1,8 +1,4 @@
-.dice-button {
-  cursor: pointer;
-  margin-top: 50px;
-}
-
 button {
   border: none;
+  cursor: pointer;
 }
