@@ -42,7 +42,7 @@ const Login = () => {
       window.localStorage.setItem("user", JSON.stringify(data));
       console.log("User logged in.");
 
-      // Redirect user to Home.
+      // Redirects user to Home when logged in.
       return navigate("/");
     } catch (err) {
       console.log("Error " + err);
