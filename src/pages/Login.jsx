@@ -52,26 +52,38 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
+        <h1>Välkommen!</h1>
+        <div className="inputBox">
+          <label></label>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Användarnamn"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
 
-        <div>
-          <label>Password:</label>
+        <div className="inputBox">
+          <label></label>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Lösenord"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <ReusableButton type="submit">Logga in</ReusableButton>
+
+        <div className="registerLink">
+          <img className="iconMan" src="images/ProfileIcon.png" alt="Icon" />
+          <p>Ny användare?</p>
+          <button
+            className="registerButton"
+            onClick={() => navigate("/register")}
+          >
+            Registrera
+          </button>
+        </div>
       </form>
     </div>
   );
