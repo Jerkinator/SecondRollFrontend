@@ -23,6 +23,22 @@
     "footer footer";
 }
 
+.login-container {
+  display: block;
+  text-align: center;
+}
+
+.login-form {
+  margin-top: 100px;
+  background-color: rgba(246, 220, 172, 1);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 300px;
+  width: 305px;
+  align-items: center;
+  border-radius: 10px;
+}
 
 /*Header*/
 header {
@@ -36,7 +52,7 @@ header {
   display: grid;
   grid-area: header;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .logo {
