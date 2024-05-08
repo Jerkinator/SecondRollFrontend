@@ -1,5 +1,5 @@
 const CreateGameAd = () => {
-  return <div>CreateGameAd</div>;
+  return <div className="create">CreateGameAd</div>;
 };
 
 export default CreateGameAd;

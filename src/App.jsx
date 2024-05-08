@@ -15,6 +15,7 @@ import SellerProfile from "./pages/SellerProfile";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -35,6 +36,14 @@ function App() {
           <Route path="/shoppingcart" element={<Shoppingcart />} />
           <Route path="/rateuser" element={<RateUser />} />
           <Route path="/sellerprofile" element={<SellerProfile />} />
+          <Route
+            path="/creategamead"
+            element={
+              <PrivateRoute>
+                <CreateGameAd />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
