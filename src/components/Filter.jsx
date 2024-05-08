@@ -38,5 +38,5 @@ const Filter = () => {
 };
 
 export default Filter;
-// must be a page showing every category when clicked
+// redirect to show ads when clicked
 // look up how to display categorys dynamic?
