@@ -2,18 +2,21 @@ import { useState, useEffect } from "react";
 
 const initProfile = {
   userName: null,
-  name: null,
+  adress: null,
 };
 
 const Fetch = () => {
   // Initialize state variables.
   const [profile, setProfile] = useState(initProfile);
 
+  // Retrieves the user ID from local storage, so that the logged in user gets their own profile.
+  var user = JSON.parse(localStorage.getItem("user"));
+
   useEffect(() => {
     // Function to get data from our backend API.
     const getProfile = async () => {
       const response = await fetch(
-        "http://localhost:8080/api/users/65f2f74f6314cd054463a802",
+        "http://localhost:8080/api/users/" + user.id,
 
         {
           method: "GET",
@@ -28,7 +31,7 @@ const Fetch = () => {
       // Update the state with response.
       setProfile({
         userName: data.username,
-        name: data.firstName,
+        adress: data.adress_city,
       });
     };
     // Load SecondRoll profile-data from API when component mounts.
@@ -37,8 +40,8 @@ const Fetch = () => {
 
   return (
     <div className="userContainer">
-      <h3>{`Username: ${profile.userName}`}</h3>
-      <h3>{`Name: ${profile.name}`}</h3>
+      <h3>{`Hej ${profile.userName}!`}</h3>
+      <h3>{`Adress: ${profile.adress}`}</h3>
     </div>
   );
 };
