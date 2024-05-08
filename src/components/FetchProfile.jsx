@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 
 const initProfile = {
   userName: null,
+  firstName: null,
+  lastName: null,
   adress: null,
+  email: null,
 };
 
-const Fetch = () => {
+const FetchProfile = () => {
   // Initialize state variables.
   const [profile, setProfile] = useState(initProfile);
 
@@ -16,7 +19,7 @@ const Fetch = () => {
     // Function to get data from our backend API.
     const getProfile = async () => {
       const response = await fetch(
-        "http://localhost:8080/api/users/" + user.id,
+        `${import.meta.env.VITE_API_URL}/users/profile/` + user.username,
 
         {
           method: "GET",
@@ -31,7 +34,10 @@ const Fetch = () => {
       // Update the state with response.
       setProfile({
         userName: data.username,
+        firstName: data.firstName,
+        lastName: data.lastName,
         adress: data.adress_city,
+        email: data.email,
       });
     };
     // Load SecondRoll profile-data from API when component mounts.
@@ -41,9 +47,12 @@ const Fetch = () => {
   return (
     <div className="userContainer">
       <h3>{`Hej ${profile.userName}!`}</h3>
+      <h3>{`Förnamn: ${profile.firstName}`}</h3>
+      <h3>{`Efternamn:  ${profile.lastName}`}</h3>
       <h3>{`Adress: ${profile.adress}`}</h3>
+      <h3>{`Email: ${profile.email}`}</h3>
     </div>
   );
 };
 
-export default Fetch;
+export default FetchProfile;

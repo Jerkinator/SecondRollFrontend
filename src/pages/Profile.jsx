@@ -1,9 +1,9 @@
-import Fetch from "../components/Fetch";
+import FetchProfile from "../components/FetchProfile";
 
 const Profile = () => {
   return (
     <div>
-      <Fetch></Fetch>
+      <FetchProfile></FetchProfile>
     </div>
   );
 };
