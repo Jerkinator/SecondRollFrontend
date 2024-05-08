@@ -1,0 +1,23 @@
+import { useState, useEffect } from "react";
+import "./RolltheDiceButton.css";
+import axios from "axios";
+
+const Axios = () => {
+    const [rollDice, setRollDice] = useState(false)
+    useEffect(() => {
+      axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then((res) => {
+          setMeals(res.data.meals);
+        })
+    }, [])
+}
+
+
+
+    return (
+      <div>
+        {meals.map((meal) => (
+        <img key={meal.idMeal} src={meal.strMealThumb} alt={meal.strMeal} width={400}/>
+        ))}
+      </div>
+  
