@@ -7,6 +7,14 @@
   padding: 0;
 }
 
+#root {
+  background-image: linear-gradient(
+    rgba(75, 73, 91),
+    rgba(140, 135, 135)
+  );
+  display: grid;
+}
+
 /*Main grid container for the HOME-page.*/
 .home-container {
   display: grid;
@@ -56,10 +64,14 @@ header {
 }
 
 .logo {
-  margin-top: 20px;
+  margin-top: 37px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 80%;
+  gap: 0;
+  grid-area: header;
+  margin-left: 133px;
 }
 
 .profile-cart {
@@ -67,6 +79,9 @@ header {
   align-items: end;
   justify-content: flex-end;
   gap: 15px;
+  margin-left: 1180px;
+  
+  width: 20%;
 }
 
 /*Footer*/
