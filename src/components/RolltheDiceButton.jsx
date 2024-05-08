@@ -1,20 +1,21 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./RolltheDiceButton.css";
 
-function RolltheDice() {
+const RolltheDice = () => {
   const [rollDice, setRollDice] = useState(false);
 
-  function handleClick() {
-    setRollDice(true);
-  }
-}
+  useEffect(() => {
+    // the code we want to run
+    console.log("Showing game ad:", rollDice);
 
-const RolltheDice = () => {
+    // optional return function
+  }, []); // the dependency array
+
   return (
-    <div className="dice-button">
-      <button onClick={() => handleClick(true)}>
-        <img src="images\RolltheDice.png" alt="RTD-button"></img>
+    <div className="container">
+      <button>
+        <img src="images\RolltheDice.png" alt="rtd-button"></img>
       </button>
     </div>
   );
