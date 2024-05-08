@@ -1,5 +1,11 @@
+import Fetch from "../components/Fetch";
+
 const Profile = () => {
-  return <div>Profile</div>;
+  return (
+    <div>
+      <Fetch></Fetch>
+    </div>
+  );
 };
 
 export default Profile;
