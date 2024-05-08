@@ -22,7 +22,6 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Header />
-        <Searchbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
