@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -24,8 +25,6 @@ function App() {
       <BrowserRouter>
         <Header />
         <Sidebar />
-        <Searchbar />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
@@ -40,6 +39,14 @@ function App() {
           <Route path="/rateuser" element={<RateUser />} />
           <Route path="/sellerprofile" element={<SellerProfile />} />
           <Route path="/faq" element={<Faq />} />
+          <Route
+            path="/creategamead"
+            element={
+              <PrivateRoute>
+                <CreateGameAd />
+              </PrivateRoute>
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
