@@ -8,10 +8,7 @@
 }
 
 #root {
-  background-image: linear-gradient(
-    rgba(75, 73, 91),
-    rgba(140, 135, 135)
-  );
+  background-image: linear-gradient(rgba(75, 73, 91), rgba(140, 135, 135));
   display: grid;
 }
 
@@ -150,7 +147,7 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  height: 480px;
+  height: 420px;
   width: 305px;
   align-items: center;
   border-radius: 5px;
@@ -188,8 +185,19 @@ header {
   justify-content: flex-end;
   gap: 15px;
   margin-left: 1180px;
-  
+
   width: 20%;
+}
+
+/*Profile*/
+.imageContainer {
+  margin-top: 80px;
+  height: 60px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
 }
 
 /*Footer*/
