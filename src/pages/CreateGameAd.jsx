@@ -6,15 +6,73 @@ import axios from "axios";
 import ReusableButton from "../components/ReusableButton";
 
 const CreateGameAd = () => {
+  const [userId, setUserId] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [gameCreator, setGameCreator] = useState("");
   const [gamePlayTime, setGamePlayTime] = useState("");
+  const [gameRecommendedAge, setGameRecommendedAge] = useState("");
+  const [gamePlayers, setGamePlayers] = useState("");
+  const [gameGenres, setGameGenres] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+  const [shippingCost, setShippingCost] = useState("");
+
+  const navigate = useNavigate();
+  var user = JSON.parse(localStorage.getItem("user"));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (
+      !title ||
+      !price ||
+      !description ||
+      !gameCreator ||
+      !gamePlayTime ||
+      !gameRecommendedAge ||
+      !gamePlayers ||
+      !gameGenres ||
+      !photoURL ||
+      !shippingCost
+    ) {
+      alert("Please fill in all the fields");
+      return;
+    }
+
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/gameAds`,
+        {
+          userId: setUserId(user.id),
+          title,
+          price,
+          description,
+          gameCreator,
+          gamePlayTime,
+          gameRecommendedAge,
+          gamePlayers,
+          gameGenres,
+          photoURL,
+          shippingCost,
+        }
+      );
+
+      dispatch({
+        type: "CREATE",
+        payload: data,
+      });
+
+      // Redirects user to Home when logged in.
+      return navigate("/");
+    } catch (err) {
+      console.log("Error " + err);
+    }
+  };
 
   return (
     <div className="create-gamead-container">
-      <form className="gamead-form">
+      <form className="gamead-form" onSubmit={handleSubmit}>
         <h1>Skapa Annons</h1>
 
         <div>
@@ -72,7 +130,10 @@ const CreateGameAd = () => {
 
         <div>
           <label>Ålder:</label>
-          <select>
+          <select
+            value={gameRecommendedAge}
+            onChange={(e) => setGameRecommendedAge(e.target.value)}
+          >
             <option value="4+">4+</option>
             <option value="8+">8+</option>
             <option value="12+">12+</option>
@@ -82,7 +143,10 @@ const CreateGameAd = () => {
 
         <div>
           <label>Antal Spelare:</label>
-          <select>
+          <select
+            value={gamePlayers}
+            onChange={(e) => setGamePlayers(e.target.value)}
+          >
             <option value="1-2">1-2 spelare</option>
             <option value="2-4">2-4 spelare</option>
             <option value="4-6">4-6 spelare</option>
@@ -92,7 +156,10 @@ const CreateGameAd = () => {
 
         <div>
           <label>Genre:</label>
-          <select>
+          <select
+            value={gameGenres}
+            onChange={(e) => setGameGenres(e.target.value)}
+          >
             <option value="family">Familj</option>
             <option value="strategy">Strategi</option>
             <option value="cardgame">Kortspel</option>
@@ -101,11 +168,21 @@ const CreateGameAd = () => {
         </div>
 
         <div>
-          <input type="text" placeholder="Foto-URL" />
+          <input
+            type="text"
+            placeholder="Foto-URL"
+            value={photoURL}
+            onChange={(e) => setPhotoURL(e.target.value)}
+          />
         </div>
 
         <div>
-          <input type="text" placeholder="Fraktkostnad" />
+          <input
+            type="number"
+            placeholder="Fraktkostnad"
+            value={shippingCost}
+            onChange={(e) => setShippingCost(e.target.value)}
+          />
         </div>
 
         <ReusableButton type="submit">Skapa Annons!</ReusableButton>
