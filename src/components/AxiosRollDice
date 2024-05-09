@@ -1,11 +1,9 @@
-import "./RolltheDiceButton.css";
-import RolltheDice from "./RolltheDiceButton";
 import axios from "axios";
 
 const AxiosRollDice = () => {
   const getRandomGameAd = () => {
     axios
-      .get(`https://localhost:8080/api/gameads`)
+      .get(`http://localhost:8080/api/gameads/all`)
       .then((res) => {
         console.log(res.data);
       })
