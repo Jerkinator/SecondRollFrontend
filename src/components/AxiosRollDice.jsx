@@ -6,7 +6,7 @@ const AxiosRollDice = ({ randomGame }) => {
 
   const getRandomGameAd = () => {
     axios
-      .get(`http://localhost:8080/api/gameads/rolldice`)
+      .get(`http://localhost:8080/api/gameAds/rolldice`)
       .then((res) => {
         console.log(res.data);
         const randomGame = res.data;
