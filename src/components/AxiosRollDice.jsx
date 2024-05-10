@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AxiosRollDice.css";
 
-const AxiosRollDice = ({ randomGame }) => {
+const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
   const [result, setResult] = useState("");
 
@@ -35,9 +35,11 @@ const AxiosRollDice = ({ randomGame }) => {
         <div>Pris: {result.price}</div>
         <div>Säljare: {result.seller}</div>
         <div>Tillverkare: {result.gameCreator}</div>
+        <div>Genre: {result.gameGenres}</div>
         <div>Speltid: {result.gamePlayTime}</div>
         <div>Rekommenderad ålder: {result.gameRecommendedAge}</div>
         <div>Antal spelare: {result.gamePlayers}</div>
+        <div>Frakt: {result.shippingCost}</div>
         <div>
           <img src={result.photoURL}></img>
         </div>
