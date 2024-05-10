@@ -5,23 +5,27 @@ import axios from "axios";
 const RolltheDice = () => {
   const [rollDice, setRollDice] = useState([false]);
 
-  const handleOnClick = (setRollDice = true) => {
-    useEffect(() => {
-      axios
-        .get(`http://localhost:8080/api/gameads/all`, { withCredentials: true })
-        .then((res) => {
-          setRollDice(res.data);
-        })
-        .catch((err) => console.log(err));
-    }, []);
-  };
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/gameads/rolldice`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setRollDice(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const handleOnClick = () => {};
 
   return (
     <div className="container">
-      <button onClick={setRollDice}>
+      <button onClick={handleOnClick}>
         <img src="images\RolltheDice.png" alt="rtd-button"></img>
       </button>
     </div>
   );
 };
+
 export default RolltheDice;
