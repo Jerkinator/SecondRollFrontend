@@ -2,15 +2,13 @@ import Searchbar from "../components/Searchbar";
 import React from "react";
 import { ItemsData } from "../components/items";
 import ShoppingList from "../components/ShoppingList";
+import Filter from "../components/Filter";
 
 const Home = () => {
   return (
     <div className="home-container">
-      <header>
-        <h1>Shopster</h1>
-      </header>
-      <Filter ItemsData={ItemsData} />
-      {/* <ShoppingList itemsData={ItemsData} /> */}
+      <Filter />
+      {/*  <ShoppingList itemsData={ItemsData} /> */}
     </div>
   );
 };
