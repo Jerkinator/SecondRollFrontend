@@ -8,10 +8,7 @@
 }
 
 #root {
-  background-image: linear-gradient(
-    rgba(75, 73, 91),
-    rgba(140, 135, 135)
-  );
+  background-image: linear-gradient(rgba(75, 73, 91), rgba(140, 135, 135));
   display: grid;
 }
 
@@ -188,7 +185,7 @@ header {
   justify-content: flex-end;
   gap: 15px;
   margin-left: 1180px;
-  
+
   width: 20%;
 }
 
