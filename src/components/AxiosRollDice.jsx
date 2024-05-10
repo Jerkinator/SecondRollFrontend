@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./AxiosRollDice.css";
 
 const AxiosRollDice = ({ randomGame }) => {
   const [rollDice, setRollDice] = useState(false);
@@ -17,13 +18,18 @@ const AxiosRollDice = ({ randomGame }) => {
       });
   };
 
+  const toggleFunc = () => {
+    setRollDice(!rollDice);
+  };
+
   useEffect(() => getRandomGameAd(), []);
 
   return (
-    <div className="container">
-      <button onClick={getRandomGameAd}>
+    <div className={rollDice ? getRandomGameAd : rollDice}>
+      <button onClick={toggleFunc}>
         <img src="images\RolltheDice.png" alt="rtd-button"></img>
       </button>
+      <div></div>
     </div>
   );
 };
