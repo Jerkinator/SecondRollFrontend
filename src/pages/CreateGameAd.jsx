@@ -73,11 +73,6 @@ const CreateGameAd = () => {
         }
       );
 
-      dispatch({
-        type: "CREATE",
-        payload: data,
-      });
-
       // Redirects user to Home when gameAd has been created.
       return navigate("/");
     } catch (err) {
