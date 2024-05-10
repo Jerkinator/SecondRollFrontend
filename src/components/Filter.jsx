@@ -21,6 +21,33 @@ const Filter = () => {
     }
   });
 
+  // testa att göra ett api anrop till att hämta en genre
+  // gör ett nytt state och spara ner resultatet i statet
+  // i fetchGenre så console.log ut data som du får så du ser den i console
+
+  const fetchGenre = async () => {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/gameAds/findbygenre/Adventure`,
+
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    );
+    const data = await response.json();
+
+    // Update the state with response.
+    setItems({
+      title: data.title,
+      genre: data.gameGenres,
+    });
+  };
+  // Load SecondRoll profile-data from API when component mounts.
+  /*  getGenre(); */
+
   // onChange finns på Dropdown, så det du har på select ska va på Dropdown
   function handleAdd(e) {
     setselectedGenre(e.target.value);
@@ -44,6 +71,7 @@ const Filter = () => {
               <Item key={item.id} title={item.title} genre={item.genre} />
             ))}
           </ul>
+          <button onClick={fetchGenre}>Klick</button>
         </div>
 
         {/*  <Dropdown placeholder="Select Item" fluid selection options={op} /> */}
