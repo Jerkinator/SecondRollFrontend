@@ -31,7 +31,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/create" element={<CreateGameAd />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gameads" element={<GameAds />} />
           <Route path="/gameadpreview" element={<GameAdPreview />} />
