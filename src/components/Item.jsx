@@ -1,10 +1,10 @@
 import React from "react";
 
-function Item({ name, category }) {
+function Item({ title, genre }) {
   return (
     <li className="item">
-      <span>{name}</span>
-      <span>{category}</span>
+      <span>{title}</span>
+      <span>{genre}</span>
     </li>
   );
 }
