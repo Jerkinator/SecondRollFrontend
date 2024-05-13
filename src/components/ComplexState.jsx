@@ -1,44 +1,29 @@
 import { useState, useEffect } from "react";
 import FetchWishlist from "./FetchWishlist";
 
-const initWishlist = [{ title: null, price: null }];
-
 function ComplexState() {
-  const [wishlist, setWishlist] = useState(initWishlist);
+  const [wishlist, setWishlist] = useState([]);
 
   var user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    // Function to get data from our backend API.
-    const getWishlist = async () => {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
+    fetch(
+      `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
 
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
-      );
-      const data = await response.json();
-
-      // Update the state with response.
-      setWishlist([
-        {
-          title: data.title,
-          price: data.price,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
         },
-      ]);
-    };
-
-    // Load SecondRoll wishlist-data from API when component mounts.
-    getWishlist();
-    console.log(wishlist);
+        credentials: "include",
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => setWishlist(data));
   }, []);
 
-  /* 
+  console.log(wishlist);
+
   return (
     <div
       style={{
@@ -54,7 +39,6 @@ function ComplexState() {
       })}
     </div>
   );
-  */
 }
 
 export default ComplexState;
