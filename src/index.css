@@ -189,17 +189,6 @@ header {
   width: 20%;
 }
 
-/*Profile*/
-.imageContainer {
-  margin-top: 80px;
-  height: 60px;
-  width: 100px;
-  position: absolute;
-  top: 50%;
-  left: 54%;
-  transform: translate(-50%, -50%);
-}
-
 /*Footer*/
 footer {
   display: flex;
@@ -221,4 +210,16 @@ footer {
   bottom: 0;
   left: 0;
   padding-top: 12px;
+}
+
+.filter-container {
+  grid-area: category;
+}
+
+.dropdown-filter {
+  margin-left: 30px;
+}
+
+.icon {
+  color: rgba(221, 104, 61, 1);
 }
