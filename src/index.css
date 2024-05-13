@@ -223,3 +223,25 @@ footer {
 .icon {
   color: rgba(221, 104, 61, 1);
 }
+
+/*Profile, avatar color switcher.*/
+.imageContainer {
+  margin-top: 80px;
+  height: 60px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+}
+
+.wishlist-container {
+  margin: 1rem;
+  width: 14rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border: 3px solid black;
+  font-family: "Exo 2", sans-serif;
+}
