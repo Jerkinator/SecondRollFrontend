@@ -6,6 +6,7 @@ const initProfile = {
   lastName: null,
   adress: null,
   email: null,
+  rating: null,
 };
 
 const FetchProfile = () => {
@@ -38,6 +39,7 @@ const FetchProfile = () => {
         lastName: data.lastName,
         adress: data.adress_city,
         email: data.email,
+        rating: data.averageRating,
       });
     };
     // Load SecondRoll profile-data from API when component mounts.
@@ -51,6 +53,7 @@ const FetchProfile = () => {
       <h3>{`Efternamn:  ${profile.lastName}`}</h3>
       <h3>{`Adress: ${profile.adress}`}</h3>
       <h3>{`Email: ${profile.email}`}</h3>
+      <h3>{`Ditt betyg: ${profile.rating}`}</h3>
     </div>
   );
 };

@@ -22,8 +22,6 @@ function ComplexState() {
       .then((data) => setWishlist(data));
   }, []);
 
-  console.log(wishlist);
-
   return (
     <div
       style={{
@@ -35,7 +33,9 @@ function ComplexState() {
     >
       <h1>Önskelista</h1>
       {wishlist.map((g, i) => {
-        return <FetchWishlist key={i} title={g.title} price={g.price} />;
+        return (
+          <FetchWishlist key={i} title={g.title} price={g.price} id={g.id} />
+        );
       })}
     </div>
   );

@@ -135,7 +135,6 @@ textarea {
   border-radius: 10px;
 }
 
-<<<<<<< HEAD
 .register-container {
   display: block;
   text-align: center;
@@ -153,16 +152,12 @@ textarea {
   border-radius: 10px;
 }
 
-=======
->>>>>>> a7f52f1fc8853f950a79fc6bbe5ba2a97d2467ae
 .register-form input {
   border: none;
   border-radius: 4px;
   align-content: space-around;
 }
 
-<<<<<<< HEAD
-=======
 .userContainer {
   background-color: rgba(246, 220, 172, 1);
   margin-top: 50px;
@@ -175,7 +170,6 @@ textarea {
   border-radius: 5px;
 }
 
->>>>>>> a7f52f1fc8853f950a79fc6bbe5ba2a97d2467ae
 /*Header*/
 header {
   position: fixed;
@@ -259,6 +253,17 @@ footer {
 }
 
 .wishlist-container {
+  margin: 1rem;
+  width: 14rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border: 3px solid black;
+  font-family: "Exo 2", sans-serif;
+}
+
+.testbox {
   margin: 1rem;
   width: 14rem;
   text-align: center;
