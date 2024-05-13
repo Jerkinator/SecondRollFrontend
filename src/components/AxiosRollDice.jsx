@@ -32,7 +32,6 @@ const AxiosRollDice = () => {
           <img src="images\RolltheDice.png" alt="rtd-button"></img>
         </button>
       </div>
-
       <div>
         {shouldShow ? (
           <div className="game-info">

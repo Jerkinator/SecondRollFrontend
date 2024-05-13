@@ -1,5 +1,12 @@
+import AxiosRollDice from "../components/AxiosRollDice";
+import ModalRollDice from "../components/ModalRollDice";
+
 const Faq = () => {
-    return <div>Faq</div>;
-  };
-  
-  export default Faq;
+  return (
+    <div>
+      <ModalRollDice />
+    </div>
+  );
+};
+
+export default Faq;

@@ -8,19 +8,25 @@ import {
   Image,
   Modal,
 } from "semantic-ui-react";
+import AxiosRollDice from "./AxiosRollDice";
 
-function ModalExampleContentImage() {
+function ModalRollDice() {
   const [open, setOpen] = React.useState(false);
 
   return (
     <Modal
       closeIcon
       open={open}
-      trigger={<Button>Show Modal</Button>}
+      trigger={
+        <Button>
+          {" "}
+          <img src="images\RolltheDice.png" alt="rtd-button"></img>
+        </Button>
+      }
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >
-      <ModalHeader>Upload image</ModalHeader>
+      <ModalHeader>Title</ModalHeader>
       <ModalContent image>
         <Image
           size="medium"
@@ -28,17 +34,18 @@ function ModalExampleContentImage() {
           wrapped
         />
         <ModalDescription>
-          <p>Would you like to upload this image?</p>
+          <p>Game info</p>
         </ModalDescription>
       </ModalContent>
+      <AxiosRollDice />
       <ModalActions>
-        <Button onClick={() => setOpen(false)}>Cancel</Button>
+        <Button onClick={() => setOpen(false)}>Go to game ad</Button>
         <Button onClick={() => setOpen(false)} positive>
-          Ok
+          Buy
         </Button>
       </ModalActions>
     </Modal>
   );
 }
 
-export default ModalExampleContentImage;
+export default ModalRollDice;
