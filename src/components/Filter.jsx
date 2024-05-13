@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import { ItemsData } from "./items";
 import {
@@ -12,6 +12,7 @@ import {
 const Filter = () => {
   const [selectedGenre, setselectedGenre] = useState("");
   const [items, setItems] = useState(ItemsData);
+  const [genre, setGenre] = useState([]);
 
   const ItemToFilter = items.filter((value) => {
     if (selectedGenre === "All") {
@@ -27,7 +28,7 @@ const Filter = () => {
 
   const fetchGenre = async () => {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/gameAds/findbygenre/Adventure`,
+      `${import.meta.env.VITE_API_URL}/gameAds/findbygenre/Family`,
 
       {
         method: "GET",
@@ -38,17 +39,10 @@ const Filter = () => {
       }
     );
     const data = await response.json();
-
-    // Update the state with response.
-    setItems({
-      title: data.title,
-      genre: data.gameGenres,
-    });
+    console.log(data);
+    setGenre(data);
   };
-  // Load SecondRoll profile-data from API when component mounts.
-  /*  getGenre(); */
 
-  // onChange finns på Dropdown, så det du har på select ska va på Dropdown
   function handleAdd(e) {
     setselectedGenre(e.target.value);
   }
