@@ -30,7 +30,7 @@ const AxiosRollDice = () => {
           <img src="images\RolltheDice.png" alt="rtd-button"></img>
         </button>
       </div>
-      <div className="gameInfo">
+      <div className="game-info">
         <div>Titel: {result.title}</div>
         <div>Pris: {result.price}</div>
         <div>Säljare: {result.seller}</div>
