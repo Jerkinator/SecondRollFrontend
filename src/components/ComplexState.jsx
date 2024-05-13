@@ -25,6 +25,12 @@ function ComplexState() {
       const data = await response.json();
 
       // Update the state with response.
+      setWishlist([
+        {
+          title: data.title,
+          price: data.price,
+        },
+      ]);
     };
 
     // Load SecondRoll wishlist-data from API when component mounts.
@@ -32,6 +38,7 @@ function ComplexState() {
     console.log(wishlist);
   }, []);
 
+  /* 
   return (
     <div
       style={{
@@ -47,6 +54,7 @@ function ComplexState() {
       })}
     </div>
   );
+  */
 }
 
 export default ComplexState;
