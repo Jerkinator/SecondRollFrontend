@@ -34,7 +34,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/gameads/:id" element={<GameAds />} />
+          <Route path="/gameads" element={<GameAds />} />
           <Route path="/gameadpreview" element={<GameAdPreview />} />
           <Route path="/shoppingcart" element={<Shoppingcart />} />
           <Route path="/rateuser" element={<RateUser />} />
