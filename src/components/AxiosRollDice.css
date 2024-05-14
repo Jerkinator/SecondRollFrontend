@@ -1,4 +1,11 @@
-button {
+.container {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.rtd-button {
   border: none;
   cursor: pointer;
+  border-radius: 3px;
 }

@@ -1,5 +1,6 @@
 .overlay {
-  width: 500px;
+  width: 250px;
+  height: 300px;
   background: white;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;

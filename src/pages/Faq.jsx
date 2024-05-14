@@ -9,7 +9,7 @@ function Faq() {
     <div className="container">
       {status && (
         <Modal close={() => setStatus(false)}>
-          <div className="container">
+          <div className="container-game">
             <p>Random game ad info here</p>
           </div>
         </Modal>
