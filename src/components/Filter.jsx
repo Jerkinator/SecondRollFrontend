@@ -1,45 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Item from "./Item";
-import { ItemsData } from "./items";
-import axios from "axios";
 
 const Filter = () => {
-  const [selectedGenre, setselectedGenre] = useState("");
   const [items, setItems] = useState("");
   const [genre, setGenre] = useState([]);
   const [value, setValue] = useState("");
 
-  /* const ItemToFilter = items.filter((value) => {
-    if (selectedGenre === "All") {
-      return true;
-    } else {
-      return value.genre === selectedGenre;
-    }
-  });
-
-  const onChange = (event) => {
-    const value = event.target.value;
-    setValue(value);
-    //fetchGenre();
-    console.log(value);
-  }; */
-
-  /*  useEffect(() => {
-    const fetchGenre = async () => {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/gameAds/all`
-      );
-      const newData = await response.json();
-
-      setGenre(newData);
-    };
-    fetchGenre();
-  }, []); */
-
   useEffect(() => {
+    //if the value is === an empty string it doesnt render the fetchGenre function
+    //but as soon as the value is set it runs and calls the find by genre endpoint.
     if (value !== "") {
       const fetchGenre = async () => {
         const response = await fetch(
+          //${value} is changed depending on choice in option list so its dynamic
           `${import.meta.env.VITE_API_URL}/gameAds/findbygenre/${value}`,
           {
             method: "GET",
@@ -56,26 +28,10 @@ const Filter = () => {
     }
   }, [value]);
 
-  /*  const fetchGenre = async () => {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/gameAds/findbygenre/${value}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    );
-    const data = await response.json();
-    console.log(data);
-    setGenre(data);
-  }; */
-
+  //Picking up the chosen category from option list and sets choice = value
   const handleAdd = (e) => {
     setValue(e.target.value);
     console.log(e.target.value);
-    // fetchGenre();
   };
   return (
     <div className="filter-container">
@@ -84,20 +40,31 @@ const Filter = () => {
           className="Filter"
           style={{ marginTop: "20rem", marginLeft: "10rem" }}
         >
+          {/* calls handleAdd function when changed */}
           <select name="filter" onChange={handleAdd}>
             <option defaultValue="" value="">
               Filter by genre
             </option>
-            <option value="Cardgame">Cardgame</option>
-            <option value="Strategy">Strategy</option>
+            <option value="Adventure">Adventure</option>
             <option value="Family">Family</option>
+            <option value="Role Play">Role Play</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Adult">Adult</option>
+            <option value="Card Game">Card Game</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Kids">Kids</option>
           </select>
         </div>
       </div>
+      {/*defines what is shown from filter result */}
       <div>
         {genre?.map((g) => (
-          <div key={g._id}>
-            <p>{g.title}</p>
+          <div key={g.id}>
+            <p>
+              {g.title}
+              {g.description}
+            </p>
           </div>
         ))}
       </div>
@@ -106,5 +73,3 @@ const Filter = () => {
 };
 
 export default Filter;
-// redirect to show ads when clicked
-// look up how to display categorys dynamic?
