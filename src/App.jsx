@@ -13,6 +13,7 @@ import Shoppingcart from "./pages/Shoppingcart";
 import RateUser from "./pages/RateUser";
 import SellerProfile from "./pages/SellerProfile";
 import Faq from "./pages/Faq";
+import Wishlist from "./pages/Wishlist";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
@@ -25,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Sidebar />
+        <Searchbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
@@ -39,6 +41,7 @@ function App() {
           <Route path="/rateuser" element={<RateUser />} />
           <Route path="/sellerprofile" element={<SellerProfile />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route
             path="/creategamead"
             element={
