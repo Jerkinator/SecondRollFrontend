@@ -25,6 +25,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Sidebar />
+        <Searchbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
