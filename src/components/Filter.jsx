@@ -60,11 +60,11 @@ const Filter = () => {
       {/*defines what is shown from filter result */}
       <div>
         {genre?.map((g) => (
-          <div key={g.id}>
+          <div className="filter-result" key={g.id}>
             <p>
-              {g.title}
-              {g.description}
+              {g.title} - {g.description}
             </p>
+            <p> </p>
           </div>
         ))}
       </div>

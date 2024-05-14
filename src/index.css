@@ -8,10 +8,7 @@
 }
 
 #root {
-  background-image: linear-gradient(
-    rgba(75, 73, 91),
-    rgba(140, 135, 135)
-  );
+  background-image: linear-gradient(rgba(75, 73, 91), rgba(140, 135, 135));
   display: grid;
 }
 
@@ -188,7 +185,7 @@ header {
   justify-content: flex-end;
   gap: 15px;
   margin-left: 1180px;
-  
+
   width: 20%;
 }
 
@@ -213,4 +210,22 @@ footer {
   bottom: 0;
   left: 0;
   padding-top: 12px;
+}
+
+.filter-result {
+  display: flex;
+  background-image: linear-gradient(
+    rgba(221, 104, 61, 1),
+    rgba(119, 56, 33, 1)
+  );
+  color: white;
+  font-family: "Exo 2", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  justify-content: center;
+
+  margin-top: 10px;
+
+  border-radius: 4px;
 }
