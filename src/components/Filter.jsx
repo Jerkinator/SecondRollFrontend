@@ -38,33 +38,33 @@ const Filter = () => {
       <div className="dropdown-filterd">
         <div
           className="Filter"
-          style={{ marginTop: "20rem", marginLeft: "10rem" }}
+          style={{ marginTop: "30rem", marginLeft: "30rem" }}
         >
           {/* calls handleAdd function when changed */}
           <select name="filter" onChange={handleAdd}>
             <option defaultValue="" value="">
               Filter by genre
             </option>
-            <option value="Adventure">Adventure</option>
-            <option value="Family">Family</option>
-            <option value="Role Play">Role Play</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Adult">Adult</option>
-            <option value="Card Game">Card Game</option>
-            <option value="Strategy">Strategy</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Kids">Kids</option>
+
+            <option value="family">Familj</option>
+            <option value="strategy">Strategi</option>
+            <option value="cardgame">Kortspel</option>
+            <option value="roleplay">Rollspel</option>
+            <option value="adventure">Äventyr</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="kids">Barn</option>
+            <option value="scifi">Sci-Fi</option>
+            <option value="other">Övriga spel</option>
           </select>
         </div>
       </div>
       {/*defines what is shown from filter result */}
-      <div>
+      <div className="genres">
         {genre?.map((g) => (
           <div className="filter-result" key={g.id}>
             <p>
-              {g.title} - {g.description}
+              {g.title} - {g.description}{" "}
             </p>
-            <p> </p>
           </div>
         ))}
       </div>

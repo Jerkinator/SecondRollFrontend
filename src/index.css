@@ -212,6 +212,12 @@ footer {
   padding-top: 12px;
 }
 
+/* .genres {
+ background-color: blueviolet; 
+  grid-area: category;
+  width: 100%;
+} */
+
 .filter-result {
   display: flex;
   background-image: linear-gradient(
@@ -226,6 +232,12 @@ footer {
   justify-content: center;
 
   margin-top: 10px;
+
+  text-align: center;
+  /*  height: 420px;
+  width: 305px; */
+  /* align-items: center; */
+  /*  border-radius: 5px; */
 
   border-radius: 4px;
 }
