@@ -39,11 +39,6 @@ const RateUser = () => {
         }
       );
 
-      dispatch({
-        type: "PUT",
-        payload: data,
-      });
-
       // Redirects user to Home when user has been rated.
       return navigate("/");
     } catch (err) {
