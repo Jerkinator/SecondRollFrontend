@@ -19,6 +19,7 @@ import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
 import PrivateRoute from "./components/PrivateRoute";
+import GameAdDetails from "./pages/GameAdDetails";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gameads" element={<GameAds />} />
+          <Route path="/gameads/:id" element={<GameAdDetails />} />
           <Route path="/gameadpreview" element={<GameAdPreview />} />
           <Route path="/shoppingcart" element={<Shoppingcart />} />
           <Route path="/rateuser" element={<RateUser />} />
