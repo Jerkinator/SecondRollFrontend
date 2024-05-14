@@ -9,24 +9,14 @@ import {
   Modal,
 } from "semantic-ui-react";
 import AxiosRollDice from "./AxiosRollDice";
+import ReusableButton from "./ReusableButton";
 
 function ModalRollDice() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Modal
-      closeIcon
-      open={open}
-      trigger={
-        <Button>
-          {" "}
-          <img src="images\RolltheDice.png" alt="rtd-button"></img>
-        </Button>
-      }
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-    >
-      <ModalHeader>Title</ModalHeader>
+    <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)}>
+      <ModalHeader>{""}</ModalHeader>
       <ModalContent image>
         <Image
           size="medium"
@@ -34,15 +24,15 @@ function ModalRollDice() {
           wrapped
         />
         <ModalDescription>
-          <p>Game info</p>
+          <p>({})</p>
         </ModalDescription>
       </ModalContent>
       <AxiosRollDice />
       <ModalActions>
-        <Button onClick={() => setOpen(false)}>Go to game ad</Button>
-        <Button onClick={() => setOpen(false)} positive>
-          Buy
-        </Button>
+        <ReusableButton onClick={() => setOpen(false)}></ReusableButton>
+        <ReusableButton onClick={() => setOpen(false)} positive>
+          Buy game
+        </ReusableButton>
       </ModalActions>
     </Modal>
   );
