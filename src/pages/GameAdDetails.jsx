@@ -51,6 +51,17 @@ const GameAdDetails = () => {
     }
   };
 
+  const handleAddToCart = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Redirects user to wishlist when game has been added to wishlist.
+      return navigate("/shoppingcart");
+    } catch (err) {
+      console.log("Error " + err);
+    }
+  };
+
   // Outputs the game information into html elements
   return (
     <div className="game-details-container">
@@ -65,11 +76,11 @@ const GameAdDetails = () => {
       <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
       <p>Frakt: {gameAd.shippingCost} kr</p>
 
-      <button className="cart-btn" onClick={handleAddToWishlist}>
-        + Lägg till i önskelista
-      </button>
+      <button onClick={handleAddToCart}>Lägg till i önskelista</button>
 
-      <ReusableButton>Lägg till i önskelista</ReusableButton>
+      <button className="cart-btn" onClick={handleAddToWishlist}>
+        Lägg till i önskelista
+      </button>
     </div>
   );
 };
