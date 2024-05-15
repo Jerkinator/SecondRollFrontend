@@ -1,6 +1,6 @@
 import React from "react";
 import { bubble as Menu } from "react-burger-menu";
-import "./Sidebar.css"
+import "./Sidebar.css";
 export default (props) => {
   return (
     <Menu>
@@ -10,7 +10,7 @@ export default (props) => {
       <a className="menu" href="/gameads">
         Köp
       </a>
-      <a className="menu" href="/create">
+      <a className="menu" href="/creategamead">
         Sälj
       </a>
       <a className="menu" href="/profile">
