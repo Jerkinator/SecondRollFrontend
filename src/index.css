@@ -48,6 +48,19 @@
   border-radius: 5px;
 }
 
+#filter {
+  border-radius: 5px;
+  background-image: linear-gradient(
+    rgba(221, 104, 61, 1),
+    rgba(119, 56, 33, 1)
+  );
+  color: white;
+  font-family: "Exo 2", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
 /*LOGIN FORM*/
 
 .login-container {

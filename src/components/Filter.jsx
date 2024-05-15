@@ -42,7 +42,7 @@ const Filter = () => {
           style={{ marginTop: "30rem", marginLeft: "30rem" }}
         >
           {/* calls handleAdd function when changed */}
-          <select name="filter" onChange={handleAdd}>
+          <select id="filter" name="filter" onChange={handleAdd}>
             <option defaultValue="" value="">
               Filter by genre
             </option>
@@ -64,7 +64,7 @@ const Filter = () => {
         {genre?.map((g) => (
           <Link to={`/gameads/${g.id}`}>
             <div className="filter-container" key={g.id}>
-              <img src={g.photoURL} alt="" />
+              <img src={g.photoURL} alt="" key={g.id} />
               <p>Titel: {g.title}</p>
               <p>Info: {g.description}</p>
             </div>
