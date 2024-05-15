@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
+import ReusableButton from "./ReusableButton";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -38,12 +39,13 @@ const AxiosRollDice = () => {
           <Modal close={() => setShouldShow(false)}>
             <div className="game-info">
               <div>Titel: {result.title}</div>
-              <div>Pris: {result.price}</div>
+              <div>Pris: {result.price} kr</div>
               <div>Säljare: {result.seller}</div>
               <div>
                 <img src={result.photoURL} className="game-img"></img>
               </div>
             </div>
+            <ReusableButton>Gå till annons</ReusableButton>
           </Modal>
         ) : null}
       </div>
