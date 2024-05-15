@@ -27,6 +27,24 @@ const AxiosRollDice = () => {
 
   useEffect(() => getRandomGameAd(), [rollDice]);
 
+  const handleAddToWishlist = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await axios.put(
+        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
+        {
+          gameId: gameAd.id,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (err) {
+      console.log("Error " + err);
+    }
+  };
+
   return (
     <div className="container">
       <div>
@@ -37,6 +55,9 @@ const AxiosRollDice = () => {
       <div>
         {shouldShow ? (
           <Modal close={() => setShouldShow(false)}>
+            <button className="cart-btn" onClick={handleAddToWishlist}>
+              Lägg till i önskelista
+            </button>
             <div className="game-info">
               <div>Titel: {result.title}</div>
               <div>Pris: {result.price} kr</div>
