@@ -39,12 +39,12 @@ const Filter = () => {
       <div className="dropdown-filterd">
         <div
           className="Dropdown"
-          style={{ marginTop: "30rem", marginLeft: "30rem" }}
+          /* style={{ marginTop: "30rem", marginLeft: "30rem" }} */
         >
           {/* calls handleAdd function when changed */}
           <select id="filter" name="filter" onChange={handleAdd}>
             <option defaultValue="" value="">
-              Filter by genre
+              Visa genre
             </option>
 
             <option value="family">Familj</option>
