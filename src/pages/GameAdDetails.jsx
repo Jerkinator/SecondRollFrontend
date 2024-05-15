@@ -51,10 +51,20 @@ const GameAdDetails = () => {
     }
   };
 
+  // Function for adding games to the shoppingcart array
+  // First fetches the array from localstorage and puts all the objects into another local array
+  // Then inserts that new array into the shoppingcart array in local storage
+  // This is to not overwrite the existing games in the array
   const handleAddToCart = async (e) => {
     e.preventDefault();
 
     try {
+      let cartArray = [];
+      cartArray = JSON.parse(localStorage.getItem("cart") || "[]");
+      cartArray.push(gameAd);
+
+      localStorage.cart = JSON.stringify(cartArray);
+
       // Redirects user to wishlist when game has been added to wishlist.
       return navigate("/shoppingcart");
     } catch (err) {
@@ -75,8 +85,9 @@ const GameAdDetails = () => {
       <p>Speltillverkare: {gameAd.gameCreator}</p>
       <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
       <p>Frakt: {gameAd.shippingCost} kr</p>
+      <p>Säljare: {gameAd.seller}</p>
 
-      <button onClick={handleAddToCart}>Lägg till i önskelista</button>
+      <button onClick={handleAddToCart}>Lägg i varukorg</button>
 
       <button className="cart-btn" onClick={handleAddToWishlist}>
         Lägg till i önskelista
