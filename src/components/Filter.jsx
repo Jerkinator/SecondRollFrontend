@@ -38,7 +38,7 @@ const Filter = () => {
     <div className="filter-container">
       <div className="dropdown-filterd">
         <div
-          className="Filter"
+          className="Dropdown"
           style={{ marginTop: "30rem", marginLeft: "30rem" }}
         >
           {/* calls handleAdd function when changed */}
@@ -60,12 +60,13 @@ const Filter = () => {
         </div>
       </div>
       {/*defines what is shown from filter result */}
-      <div className="genres">
+      <div>
         {genre?.map((g) => (
           <Link to={`/gameads/${g.id}`}>
             <div className="filter-container" key={g.id}>
+              <img src={g.photoURL} alt="" />
               <p>Titel: {g.title}</p>
-              <p> </p>
+              <p>Info: {g.description}</p>
             </div>
           </Link>
         ))}
