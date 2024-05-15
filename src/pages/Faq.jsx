@@ -1,5 +1,5 @@
-const Faq = () => {
-    return <div>Faq</div>;
-  };
-  
-  export default Faq;
+function Faq() {
+  return <p>Hello</p>;
+}
+
+export default Faq;
