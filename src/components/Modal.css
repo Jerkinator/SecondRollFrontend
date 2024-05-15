@@ -1,4 +1,5 @@
 .overlay {
+  display: flex;
   width: 250px;
   height: 300px;
   background: white;
@@ -9,15 +10,7 @@
   transform: scale(1);
   opacity: 1;
   visibility: visible;
-
-  &.red {
-    background: black;
-    color: red;
-  }
-  &.blue {
-    background: blue;
-    color: red;
-  }
+  font-style: "Exo 2";
 
   &.off {
     opacity: 0;
@@ -30,26 +23,6 @@
 
 .close {
   cursor: pointer;
-}
-
-h2 {
-  border-bottom: 1px solid #ccc;
-  padding: 1rem;
-  margin: 0;
-}
-.content {
-  padding: 1rem;
-}
-.actions {
-  border-top: 1px solid #ccc;
-  background: #eee;
-  padding: 0.5rem 1rem;
-  button {
-    border: 0;
-    background: #78f89f;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    line-height: 1;
-  }
+  margin-left: 230px;
+  margin-top: 10px;
 }

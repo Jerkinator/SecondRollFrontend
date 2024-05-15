@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
 .container {
   display: flex;
-  justify-content: flex-start;
+  flex-flow: row wrap;
+  box-sizing: border-box;
   margin-left: 20px;
+  font-style: "Exo 2";
 }
 
 .rtd-button {
@@ -10,4 +14,11 @@
   border: none;
   cursor: pointer;
   border-radius: 3px;
+}
+
+.game-img {
+  size: fixed;
+  max-width: 150px;
+  max-height: 250px;
+  object-fit: contain;
 }

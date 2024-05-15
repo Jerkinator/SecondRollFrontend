@@ -40,14 +40,8 @@ const AxiosRollDice = () => {
               <div>Titel: {result.title}</div>
               <div>Pris: {result.price}</div>
               <div>Säljare: {result.seller}</div>
-              <div>Tillverkare: {result.gameCreator}</div>
-              <div>Genre: {result.gameGenres}</div>
-              <div>Speltid: {result.gamePlayTime}</div>
-              <div>Rekommenderad ålder: {result.gameRecommendedAge}</div>
-              <div>Antal spelare: {result.gamePlayers}</div>
-              <div>Frakt: {result.shippingCost}</div>
               <div>
-                <img src={result.photoURL}></img>
+                <img src={result.photoURL} className="game-img"></img>
               </div>
             </div>
           </Modal>
