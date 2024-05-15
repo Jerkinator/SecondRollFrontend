@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Filter = () => {
   const [items, setItems] = useState("");
@@ -61,11 +62,12 @@ const Filter = () => {
       {/*defines what is shown from filter result */}
       <div className="genres">
         {genre?.map((g) => (
-          <div className="filter-result" key={g.id}>
-            <p>
-              {g.title} - {g.description}{" "}
-            </p>
-          </div>
+          <Link to={`/gameads/${g.id}`}>
+            <div className="filter-container" key={g.id}>
+              <p>Titel: {g.title}</p>
+              <p> </p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
