@@ -4,13 +4,12 @@ import "./Searchbar.css";
 
 const Searchbar = () => {
   const [searchInput, setSearchInput] = useState("");
+  const [result, setResult] = useState([]);
 
   const fetchGames = (value) => {
     fetch(`${import.meta.env.VITE_API_URL}/gameAds/findbytitle/` + value)
       .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-      });
+      .then((data) => setResult(data));
   };
 
   const handleChange = (value) => {
@@ -41,6 +40,12 @@ const Searchbar = () => {
       className="searchbar"
     />
   );
-}; */
+}; 
+
+  <Link to="/gameadpreview" state={{ game: id }}>
+              Go to game
+            </Link>
+            
+            */
 
 export default Searchbar;
