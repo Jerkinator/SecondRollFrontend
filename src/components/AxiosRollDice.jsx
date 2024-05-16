@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./AxiosRollDice.css";
+import Modal from "./Modal";
+import ReusableButton from "./ReusableButton";
+import { Link } from "react-router-dom";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -29,26 +32,24 @@ const AxiosRollDice = () => {
     <div className="container">
       <div>
         <button onClick={() => setRollDice(true)}>
-          <img src="images\RolltheDice.png" alt="rtd-button"></img>
+          <img src="images\RolltheDice.png" className="rtd-button"></img>
         </button>
       </div>
-
       <div>
         {shouldShow ? (
-          <div className="game-info">
-            <div>Titel: {result.title}</div>
-            <div>Pris: {result.price}</div>
-            <div>Säljare: {result.seller}</div>
-            <div>Tillverkare: {result.gameCreator}</div>
-            <div>Genre: {result.gameGenres}</div>
-            <div>Speltid: {result.gamePlayTime}</div>
-            <div>Rekommenderad ålder: {result.gameRecommendedAge}</div>
-            <div>Antal spelare: {result.gamePlayers}</div>
-            <div>Frakt: {result.shippingCost}</div>
-            <div>
-              <img src={result.photoURL}></img>
+          <Modal close={() => setShouldShow(false)}>
+            <div className="game-info">
+              <div>Titel: {result.title}</div>
+              <div>Pris: {result.price} kr</div>
+              <div>Säljare: {result.seller}</div>
+              <div>
+                <img src={result.photoURL} className="game-img"></img>
+              </div>
             </div>
-          </div>
+            <Link to={`/gameads/${result.id}`}>
+              <ReusableButton>Gå till annons</ReusableButton>
+            </Link>
+          </Modal>
         ) : null}
       </div>
     </div>
