@@ -1,51 +1,51 @@
-import { Input } from "semantic-ui-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "./Searchbar.css";
 
 const Searchbar = () => {
-  const [searchInput, setSearchInput] = useState("");
-  const [result, setResult] = useState([]);
+  const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
 
-  const fetchGames = (value) => {
-    fetch(`${import.meta.env.VITE_API_URL}/gameAds/findbytitle/` + value)
-      .then((response) => response.json())
-      .then((data) => setResult(data));
-  };
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+        setData(data);
+        setFilterData(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-  const handleChange = (value) => {
-    setSearchInput(value);
-    fetchGames(value);
+  const handleFilter = (value) => {
+    const result = filterData.filter((f) =>
+      f.title.toLowerCase().includes(value)
+    );
+    setData(result);
+    if (value === "") {
+      setData([]);
+    }
   };
 
   return (
-    <div className="search-container">
-      <Input
-        fluid
-        icon="search"
-        placeholder="Sök efter titel..."
-        value={searchInput}
-        className="searchbar"
-        onChange={(e) => handleChange(e.target.value)}
-      />
+    <div className="search-top">
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Sök efter titel"
+          onChange={(e) => handleFilter(e.target.value)}
+        />
+      </div>
+      <div className="search-results">
+        {data.map((g) => (
+          <Link to={`/gameads/${g.id}`}>
+            <div key={g.id}>{g.title}</div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
-
-/*
-const Searchbar = () => {
-  return (
-    <Input
-      icon="search"
-      placeholder="Sök efter titlar..."
-      className="searchbar"
-    />
-  );
-}; 
-
-  <Link to="/gameadpreview" state={{ game: id }}>
-              Go to game
-            </Link>
-            
-            */
 
 export default Searchbar;
