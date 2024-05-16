@@ -1,6 +1,5 @@
 .overlay {
   box-sizing: border-box;
-  display: flex;
   width: 360px;
   height: 460px;
   background: #f6dcac;
@@ -10,6 +9,12 @@
   transform: scale(1);
   opacity: 1;
   visibility: visible;
+}
+
+.content {
+  display: inline-block;
+  justify-content: flex-start;
+  margin: 10px;
 }
 
 .close {

@@ -4,6 +4,7 @@ import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
 import ReusableButton from "./ReusableButton";
+import WishlistIcon from "./WishlistIcon";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -28,24 +29,6 @@ const AxiosRollDice = () => {
 
   useEffect(() => getRandomGameAd(), [rollDice]);
 
-  const handleAddToWishlist = async (e) => {
-    e.preventDefault();
-
-    try {
-      const { setResult } = await axios.put(
-        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
-        {
-          gameId: gameAd.id,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (err) {
-      console.log("Error " + err);
-    }
-  };
-
   return (
     <div className="container">
       <div>
@@ -56,6 +39,10 @@ const AxiosRollDice = () => {
       <div className="modal">
         {shouldShow ? (
           <Modal close={() => setShouldShow(false)}>
+            <WishlistIcon
+              className="heart-icon"
+              gameId={result.id}
+            ></WishlistIcon>
             <div className="game-info">
               <div>Titel: {result.title}</div>
               <div>Pris: {result.price} kr</div>

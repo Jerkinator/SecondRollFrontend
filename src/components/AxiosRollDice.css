@@ -14,13 +14,8 @@
   border-radius: 3px;
 }
 
-.heart-btn {
-  background-color: rgb(248, 175, 40);
-}
-
 .game-img {
   display: flex;
-  align-self: center;
   max-width: 300px;
   max-height: 450px;
   object-fit: contain;

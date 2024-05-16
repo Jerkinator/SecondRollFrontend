@@ -1,6 +1,5 @@
 import { MdClose } from "react-icons/md";
 import "./Modal.css";
-import WishlistIcon from "./WishlistIcon";
 
 const Modal = ({ children, close }) => {
   return (
@@ -10,7 +9,6 @@ const Modal = ({ children, close }) => {
 
         {children}
       </div>{" "}
-      <WishlistIcon className="heart-icon" />
     </div>
   );
 };
