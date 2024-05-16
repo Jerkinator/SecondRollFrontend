@@ -2,7 +2,7 @@
   position: fixed;
   width: 32px;
   height: 22px;
-  left: 36px;
+  left: 30px;
   top: 36px;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .bm-item:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .bm-overlay {

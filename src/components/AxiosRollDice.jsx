@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
@@ -31,7 +32,7 @@ const AxiosRollDice = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.put(
+      const { setResult } = await axios.put(
         `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
         {
           gameId: gameAd.id,
@@ -52,12 +53,9 @@ const AxiosRollDice = () => {
           <img src="images\RolltheDice.png" className="rtd-button"></img>
         </button>
       </div>
-      <div>
+      <div className="modal">
         {shouldShow ? (
           <Modal close={() => setShouldShow(false)}>
-            <button className="cart-btn" onClick={handleAddToWishlist}>
-              Lägg till i önskelista
-            </button>
             <div className="game-info">
               <div>Titel: {result.title}</div>
               <div>Pris: {result.price} kr</div>
@@ -66,7 +64,9 @@ const AxiosRollDice = () => {
                 <img src={result.photoURL} className="game-img"></img>
               </div>
             </div>
-            <ReusableButton>Gå till annons</ReusableButton>
+            <Link to={`/gameads/${result.id}`}>
+              <ReusableButton>Gå till annons</ReusableButton>
+            </Link>
           </Modal>
         ) : null}
       </div>

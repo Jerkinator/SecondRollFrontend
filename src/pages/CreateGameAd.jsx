@@ -116,6 +116,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gameCreator}
             onChange={(e) => setGameCreator(e.target.value)}
           >
@@ -132,6 +133,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gamePlayTime}
             onChange={(e) => setGamePlayTime(e.target.value)}
           >
@@ -146,6 +148,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gameRecommendedAge}
             onChange={(e) => setGameRecommendedAge(e.target.value)}
           >
@@ -162,6 +165,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gamePlayers}
             onChange={(e) => setGamePlayers(e.target.value)}
           >
@@ -178,6 +182,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={[gameGenres]}
             onChange={(e) => setGameGenres([e.target.value])}
           >
