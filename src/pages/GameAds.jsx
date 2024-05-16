@@ -1,5 +1,11 @@
+import GameAdsComponent from "../components/GameAdsComponent";
+
 const GameAds = () => {
-  return <div>GameAds</div>;
+  return (
+    <div>
+      <GameAdsComponent></GameAdsComponent>
+    </div>
+  );
 };
 
 export default GameAds;
