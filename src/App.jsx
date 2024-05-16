@@ -42,13 +42,13 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
           <Route path="/gameads" element={<GameAds />} />
           <Route path="/gameads/:id" element={<GameAdDetails />} />
-          <Route path="/shoppingcart" element={<Shoppingcart />} />
-          <Route path="/rateuser" element={<RateUser />} />
-          <Route path="/sellerprofile" element={<SellerProfile />} />
-          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/shoppingcart" element={<PrivateRoute><Shoppingcart /></PrivateRoute>} />
+          <Route path="/rateuser" element={<PrivateRoute><RateUser /></PrivateRoute>} />
+          <Route path="/sellerprofile" element={<PrivateRoute><SellerProfile /></PrivateRoute>} />
+          <Route path="/wishlist" element={<PrivateRoute><Wishlist /></PrivateRoute>} />
           <Route
             path="/creategamead"
             element={
