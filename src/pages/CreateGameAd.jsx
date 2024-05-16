@@ -73,11 +73,6 @@ const CreateGameAd = () => {
         }
       );
 
-      dispatch({
-        type: "CREATE",
-        payload: data,
-      });
-
       // Redirects user to Home when gameAd has been created.
       return navigate("/");
     } catch (err) {
@@ -121,6 +116,7 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gameCreator}
             onChange={(e) => setGameCreator(e.target.value)}
           >
@@ -137,38 +133,39 @@ const CreateGameAd = () => {
 
         <div>
           <select
+            id="create-dropdown"
             value={gamePlayTime}
             onChange={(e) => setGamePlayTime(e.target.value)}
           >
             <option disabled={true} value="">
               Speltid
             </option>
-            <option value="10-30">10-30 min</option>
-            <option value="30-60">30-60 min</option>
-            <option value="60-120">60-120 min</option>
-            <option value="120+">120+ min</option>
-            <option value="other">Annat</option>
+            <option value="10+">10+ min</option>
+            <option value="30+">30+ min</option>
+            <option value="60+">60+ min</option>
           </select>
         </div>
 
         <div>
           <select
+            id="create-dropdown"
             value={gameRecommendedAge}
             onChange={(e) => setGameRecommendedAge(e.target.value)}
           >
             <option disabled={true} value="">
               Ålder
             </option>
-            <option value="4+">4+</option>
-            <option value="8+">8+</option>
-            <option value="12+">12+</option>
-            <option value="16+">16+</option>
-            <option value="other">Annat</option>
+            <option value="2+">2+</option>
+            <option value="6+">6+</option>
+            <option value="10+">10+</option>
+            <option value="14+">14+</option>
+            <option value="18+">18+</option>
           </select>
         </div>
 
         <div>
           <select
+            id="create-dropdown"
             value={gamePlayers}
             onChange={(e) => setGamePlayers(e.target.value)}
           >
@@ -179,12 +176,13 @@ const CreateGameAd = () => {
             <option value="2-4">2-4 spelare</option>
             <option value="4-6">4-6 spelare</option>
             <option value="6-8">6-8 spelare</option>
-            <option value="other">Annat</option>
+            <option value="10+">10+ spelare</option>
           </select>
         </div>
 
         <div>
           <select
+            id="create-dropdown"
             value={[gameGenres]}
             onChange={(e) => setGameGenres([e.target.value])}
           >
@@ -195,6 +193,10 @@ const CreateGameAd = () => {
             <option value="strategy">Strategi</option>
             <option value="cardgame">Kortspel</option>
             <option value="roleplay">Rollspel</option>
+            <option value="adventure">Äventyr</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="kids">Barn</option>
+            <option value="scifi">Sci-Fi</option>
             <option value="other">Annat</option>
           </select>
         </div>

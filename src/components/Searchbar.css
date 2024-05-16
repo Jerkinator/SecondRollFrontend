@@ -5,6 +5,10 @@
 .search-container {
   padding: 5px;
   margin: 5px;
-  display: grid;
-  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-top: -70px;
+  /* background-color: orange; */
 }
