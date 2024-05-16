@@ -1,4 +1,4 @@
-/* import Searchbar from "../components/Searchbar"; */
+import Searchbar from "../components/Searchbar";
 
 import React from "react";
 

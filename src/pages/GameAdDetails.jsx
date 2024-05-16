@@ -76,22 +76,25 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
-      <h2>Titel: {gameAd.title}</h2>
-      <h2>Pris: {gameAd.price} kr</h2>
-      <p>Beskrivning: {gameAd.description}</p>
-      <p>Genre: {gameAd.gameGenres}</p>
-      <p>Antal Spelare: {gameAd.gamePlayers}</p>
-      <p>Speltid: {gameAd.gamePlayTime} min</p>
-      <p>Speltillverkare: {gameAd.gameCreator}</p>
-      <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
-      <p>Frakt: {gameAd.shippingCost} kr</p>
-      <p>Säljare: {gameAd.seller}</p>
+      <div className="game-descripton">
+        <h2>Titel: {gameAd.title}</h2>
+        <h2>Pris: {gameAd.price} kr</h2>
+        <p>Beskrivning: {gameAd.description}</p>
+        <p>Genre: {gameAd.gameGenres}</p>
+        <p>Antal Spelare: {gameAd.gamePlayers}</p>
+        <p>Speltid: {gameAd.gamePlayTime} min</p>
+        <p>Speltillverkare: {gameAd.gameCreator}</p>
+        <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
+        <p>Frakt: {gameAd.shippingCost} kr</p>
+        <p>Säljare: {gameAd.seller}</p>
+      </div>
+      <div className="gameAd-buttons">
+        <button onClick={handleAddToCart}>Lägg i varukorg</button>
 
-      <button onClick={handleAddToCart}>Lägg i varukorg</button>
-
-      <button className="cart-btn" onClick={handleAddToWishlist}>
-        Lägg till i önskelista
-      </button>
+        <button className="cart-btn" onClick={handleAddToWishlist}>
+          Lägg till i önskelista
+        </button>
+      </div>
     </div>
   );
 };

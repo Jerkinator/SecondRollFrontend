@@ -20,6 +20,7 @@ import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
 import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
+import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -34,6 +35,10 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        {/* Would be better to implement a layout component on 
+        all pages instead of having somethng set to root. but it messes up
+        our css so we can wait with the change untill we doe our css refactor.
+        <Layout> */}
         <Header />
         <Sidebar />
         <Searchbar />
@@ -58,7 +63,9 @@ function App() {
             }
           />
         </Routes>
+
         <Footer />
+        {/*  </Layout> */}
       </BrowserRouter>
     </AuthProvider>
   );

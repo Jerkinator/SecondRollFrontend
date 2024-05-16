@@ -1,5 +1,13 @@
+import React from "react";
+import ViewCart from "../components/ViewCart";
+
 const Shoppingcart = () => {
-  return <div>Shoppingcart</div>;
+  return (
+    <div>
+      kundkorg
+      <ViewCart />
+    </div>
+  );
 };
 
 export default Shoppingcart;
