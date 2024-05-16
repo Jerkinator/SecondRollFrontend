@@ -3,6 +3,7 @@ import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
 import ReusableButton from "./ReusableButton";
+import { Link } from "react-router-dom";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -45,7 +46,9 @@ const AxiosRollDice = () => {
                 <img src={result.photoURL} className="game-img"></img>
               </div>
             </div>
-            <ReusableButton>Gå till annons</ReusableButton>
+            <Link to={`/gameads/${result.id}`}>
+              <ReusableButton>Gå till annons</ReusableButton>
+            </Link>
           </Modal>
         ) : null}
       </div>
