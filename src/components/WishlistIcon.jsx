@@ -55,7 +55,7 @@ const WishlistIcon = ({ gameId }) => {
   };
 
   return (
-    <div className="heart">
+    <div className="heart-icon">
       <Heart isClick={click} onClick={() => handleWishlistOnClick()} />
     </div>
   );
