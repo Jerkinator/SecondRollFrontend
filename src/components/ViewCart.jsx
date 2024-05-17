@@ -13,12 +13,15 @@ const ViewCart = () => {
     console.log(cartItems);
     console.log(buyerId);
   };
- const adId = gameAd?.map((gameAd.id) => (
-setOrder(adId)
- ));
+  /*  const adId = gameAd?.map((gameAd.id) => (
+    setOrder(adId)
+ )); */
 
-  const createOrder = (e) => {
-    setOrder(adId);
+  const adId = gameAd.map((gameAd) => {
+    setOrder(gameAd.id);
+    console.log(adId);
+  });
+  const showId = (e) => {
     console.log(adId);
   };
 
@@ -34,7 +37,7 @@ setOrder(adId)
   return (
     <div>
       <div>
-        <button onClick={createOrder}>tryck här</button>
+        <button onClick={showId}>tryck här</button>
         {gameAd?.map((g) => (
           <div className="filter-container" key={g.id}>
             <img src={g.photoURL} alt="" key={g.id} />
