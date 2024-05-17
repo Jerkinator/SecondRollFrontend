@@ -9,9 +9,6 @@ export default (props) => {
       <a className="menu" href="/login">
         Logga in
       </a>
-      <a className="menu" href="/about">
-        Om oss
-      </a>
       <a className="menu" href="/gameads">
         Köp
       </a>
@@ -21,8 +18,8 @@ export default (props) => {
       <a className="menu" href="/profile">
         Profil
       </a>
-      <a className="menu" href="/faq">
-        FAQ
+      <a className="menu" href="/about">
+        Om oss
       </a>
       <a onClick={LogoutComponent} className="menu" href="/">
         Logga Ut
