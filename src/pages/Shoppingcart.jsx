@@ -10,6 +10,7 @@ import React from "react";
 const Shoppingcart = () => {
   const [gameAd, setGameAd] = useState([]);
   const [order, setOrder] = useState([]);
+
   const cartItems = JSON.parse(localStorage.getItem("cart"));
   const buyer = JSON.parse(localStorage.getItem("user"));
 
