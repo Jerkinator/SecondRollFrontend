@@ -96,6 +96,7 @@ const CreateGameAd = () => {
 
         <div>
           <textarea
+            className="textbox"
             type="text"
             placeholder="Beskrivning..."
             value={description}

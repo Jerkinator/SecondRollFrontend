@@ -135,6 +135,7 @@
   outline: none;
   border-radius: 5px;
   padding-left: 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #fff, 0 1px 0 #fff;
 }
 
 .iconMan {
@@ -148,10 +149,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 70vh; */
-  margin-top: -210px;
-  margin-bottom: 30px;
+  height: 100%;
   font-family: "Exo 2", sans-serif;
+  margin-top: 80px;
 }
 
 .gamead-form {
@@ -159,11 +159,50 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  height: 500px;
+  height: 600px;
   width: 305px;
   align-items: center;
   border-radius: 10px;
-  margin-top: 80px;
+}
+
+.gamead-form input,
+textarea {
+  width: 250px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin: 5px;
+  font-family: "Exo 2", sans-serif;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #fff, 0 1px 0 #fff;
+}
+
+.gamead-form select,
+option {
+  width: 250px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin: 5px;
+  font-family: "Exo 2", sans-serif;
+}
+
+#create-dropdown {
+  font-size: 12px;
+  color: white;
+}
+
+option {
+  font-size: 12px;
+  color: black;
+}
+
+.textbox {
+  font-family: "Exo 2", sans-serif;
+  padding: 5px;
 }
 
 textarea {
@@ -193,44 +232,39 @@ textarea {
 
 /*REGISTER FORM*/
 
-.register-container {
-  display: block;
-  text-align: center;
-}
-
 .register-form {
-  margin-top: 100px;
   background-color: rgba(246, 220, 172, 1);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  height: 300px;
-  width: 305px;
-  align-items: center;
+  width: 300px;
   border-radius: 10px;
+  padding-bottom: 10px;
 }
 
-.register-container {
-  display: block;
-  text-align: center;
-}
-
-.register-form {
-  margin-top: 100px;
-  background-color: rgba(246, 220, 172, 1);
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 300px;
-  width: 305px;
-  align-items: center;
-  border-radius: 10px;
+.reg-btn {
+  padding: 10px;
 }
 
 .register-form input {
+  width: 250px;
+  height: 30px;
   border: none;
-  border-radius: 4px;
-  align-content: space-around;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin: 5px;
+  font-family: "Exo 2", sans-serif;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #fff, 0 1px 0 #fff;
+}
+
+.register-form h1 {
+  font-family: "Exo 2", sans-serif;
+}
+
+.register-container {
+  display: block;
+  text-align: center;
 }
 
 .userContainer {
