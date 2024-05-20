@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SearchResults from "./SearchResults";
 
 import "./Searchbar.css";
 
@@ -9,11 +10,11 @@ const Searchbar = () => {
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
-      .then((result) => result.json())
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setData(data);
         setFilterData(data);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -38,11 +39,15 @@ const Searchbar = () => {
         />
       </div>
       <div className="search-results">
-        {data.map((g) => (
-          <Link to={`/gameads/${g.id}`}>
-            <div key={g.id}>{g.title}</div>
-          </Link>
-        ))}
+        {data.map((g, i) => {
+          return (
+            <div className="search-results" key={i}>
+              <Link to={`/gameads/${g.id}`}>
+                <p>{g.title}</p>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
