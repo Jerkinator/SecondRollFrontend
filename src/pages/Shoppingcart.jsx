@@ -3,14 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
 
-/*-Isolate gamead id and logged in user id to create order and send to endpoint.
-  -Create button to remove gameAd from shoppingcart.
-  -Write funcytionality that clears localstorage after order is created.
-  -Empty Cart message that becomes hidden when Cart is not empty.*/
-
 const Shoppingcart = () => {
-  // const [gameAd, setGameAd] = useState([]);
-
   const navigate = useNavigate();
   /*retrieves items in cart from localstorage */
   const cartItems = JSON.parse(localStorage.getItem("cart"));
@@ -25,9 +18,7 @@ const Shoppingcart = () => {
   }
 
   const createOrder = async () => {
-    // setOrder({ buyerId: buyer.id, gameAdIds: gameIds });
-    // console.log(order);
-    // setOrder({ buyerId: buyer.id, gameAdIds: gameIds });
+    /*If cartItems is not an empty array it retrieves the ids of the game ads  */
     let gameIds = [];
     if (cartItems !== "") {
       gameIds = cartItems.map((a) => a.id);
@@ -44,7 +35,8 @@ const Shoppingcart = () => {
         { withCredentials: true }
       );
 
-      alert("Order created!");
+      alert("Din order är nu skapad!");
+      /*Clears cart in local storage after order is created*/
       localStorage.removeItem("cart");
 
       // Redirects user to Home when order has been created
@@ -71,29 +63,3 @@ const Shoppingcart = () => {
   );
 };
 export default Shoppingcart;
-
-/* const showCart = (e) => {
-    setGameAd(cartItems);
-    // console.log("cart item: " + cartItems);
-    // console.log("buyer: " + JSON.parse(buyer));
-  }; */
-/*  const adId = gameAd?.map((gameAd.id) => (
-    setOrder(adId)
- )); */
-
-/*  const adId = gameAd.map((gameAd) => {
-    setOrder(gameAd.id);
-    console.log(adId);
-  });
-  const showId = (e) => {
-    console.log(adId);
-  };
- */
-/*   useEffect(() => {
-    if (gameAd === "") {
-      return <h1>korgen är tom</h1>;
-    } */
-/*  if (gameAd !== "") {
-       showCart(); 
-    } 
-  }, []);*/
