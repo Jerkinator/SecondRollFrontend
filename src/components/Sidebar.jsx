@@ -1,11 +1,13 @@
 import React from "react";
 import { bubble as Menu } from "react-burger-menu";
 import "./Sidebar.css";
+import LogoutComponent from "./LogoutComponent";
+
 export default (props) => {
   return (
     <Menu>
-      <a className="menu" href="/about">
-        Om oss
+      <a className="menu" href="/login">
+        Logga in
       </a>
       <a className="menu" href="/gameads">
         Köp
@@ -16,8 +18,11 @@ export default (props) => {
       <a className="menu" href="/profile">
         Profil
       </a>
-      <a className="menu" href="/faq">
-        FAQ
+      <a className="menu" href="/about">
+        Om oss
+      </a>
+      <a onClick={LogoutComponent} className="menu" href="/">
+        Logga Ut
       </a>
     </Menu>
   );

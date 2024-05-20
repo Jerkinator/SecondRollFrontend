@@ -1,5 +1,6 @@
+
 const GameAds = () => {
-  return <div>GameAds</div>;
+  return;
 };
 
 export default GameAds;

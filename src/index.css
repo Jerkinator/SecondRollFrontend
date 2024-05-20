@@ -39,7 +39,17 @@
 
 /*Main grid container for the HOME-page.*/
 .home-container {
-  display: flex;
+  margin-top: 200px;
+  display: grid;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .filter-container img {
@@ -52,7 +62,7 @@
 
 .filter-container {
   background-color: rgba(246, 220, 172, 1);
-  margin-top: 50px;
+  margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -69,7 +79,7 @@
     rgba(221, 104, 61, 1),
     rgba(119, 56, 33, 1)
   );
-  color: white;
+  /* color: white; */
   font-family: "Exo 2", sans-serif;
   text-align: center;
   font-size: 12px;
@@ -81,7 +91,7 @@
     rgba(221, 104, 61, 1),
     rgba(119, 56, 33, 1)
   );
-  color: white;
+  /*  color: white; */
   font-family: "Exo 2", sans-serif;
   text-align: center;
   font-size: 10px;
@@ -344,4 +354,50 @@ footer {
   padding: 0.5rem;
   border: 3px solid black;
   font-family: "Exo 2", sans-serif;
+}
+
+.gameAd-container img {
+  height: 200px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+.gameAd-container {
+  background-color: rgba(246, 220, 172, 1);
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 300px;
+  width: 305px;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.about-container {
+  background-color: rgba(246, 220, 172, 1);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 100%;
+  width: 90%;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Exo 2", sans-serif;
+  padding: 3px;
+}
+
+.about-box h2 {
+  padding: 5px;
+  border: 3px solid rgba(221, 104, 61, 1);
+  border-radius: 5px;
+}
+
+.hideme {
+  color: rgba(246, 220, 172, 1);
 }
