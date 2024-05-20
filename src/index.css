@@ -357,7 +357,7 @@ footer {
 }
 
 .gameAd-container img {
-  background-color: blueviolet;
+  /*  background-color: blueviolet; */
   grid-area: image;
   height: 200px;
   width: 300px;
@@ -367,12 +367,12 @@ footer {
 }
 
 .game-descripton {
-  background-color: brown;
+  /* background-color: brown; */
   grid-area: text;
 }
 
 .gameAd-buttons {
-  background-color: aqua;
+  /* background-color: aqua; */
   grid-area: buttons;
 }
 
