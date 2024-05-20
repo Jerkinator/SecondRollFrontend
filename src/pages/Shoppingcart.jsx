@@ -16,29 +16,28 @@ const Shoppingcart = () => {
   });
 
   const navigate = useNavigate();
-
+  /*retrieves items in cart from localstorage */
   const cartItems = JSON.parse(localStorage.getItem("cart"));
-  // i cartItems finns allt men du vill filtrera nerså du bara har id (filter() eller kanske find())
-  // gör ny variabel och spara ner det filtrerade värdet
-  /* const gameIds = cartItems.find(cart.id);*/
-  const gameIds = cartItems.map((a) => a.id);
 
+  /* if cartItems isn´t empty, loops through and picks out gameAd ids*/
+  if (cartItems) {
+    const gameIds = cartItems.map((a) => a.id);
+  }
+
+  /*retrieves buyer(logged in user) from localstorage */
   const buyer = JSON.parse(localStorage.getItem("user"));
-  // samma sak gäller för user du vill bara ha id
-  /* const buyerId = buyer.get(); */
-  /* const buyerId = buyer.map((a) => a.id);
-  console.log("Buyer Id: " + buyerId); */
-  /* 
-  console.log(
-    "gameid: " + gameIds,
-    "buyer id: " + buyer.id,
-    "inside cart: " + cartItems
-  ); */
 
-  /*  useEffect(() => {
-    setOrder({ buyerId: buyer.id, gameAdIds: gameIds });
-  }, []);
- */
+  function emptyCart() {
+    /* window.location.reload(false); */
+    console.log("cart is empty");
+  }
+
+  function clearShoppingCart() {
+    localStorage.removeItem("cart");
+    window.location.reload(false);
+    /*  console.log("cart cleared"); */
+  }
+
   const createOrder = async () => {
     // setOrder({ buyerId: buyer.id, gameAdIds: gameIds });
     // console.log(order);
@@ -55,7 +54,7 @@ const Shoppingcart = () => {
 
       alert("Order created!");
 
-      // Redirects user to Home when logged in.
+      // Redirects user to Home when order has been created
       return navigate("/");
     } catch (err) {
       console.log("Error " + err);
@@ -63,18 +62,25 @@ const Shoppingcart = () => {
   };
 
   return (
-    <div>
-      <button onClick={createOrder}>Order Items</button>
-      <div>
-        {cartItems?.map((g) => (
-          <div className="filter-container" key={g.id}>
-            <img src={g.photoURL} alt="" key={g.id} />
-            <p>Titel: {g.title}</p>
-            <p>Info: {g.price}</p>
-            <p>Säljare: {g.seller}</p>
-          </div>
-        ))}
-      </div>
+    <div onLoad={emptyCart}>
+      {cartItems ? (
+        <div>
+          {cartItems?.map((g) => (
+            <div key={g.id} className="filter-container">
+              <img src={g.photoURL} alt="" />
+              <p>Titel: {g.title}</p>
+              <p>Info: {g.price}</p>
+              <p>Säljare: {g.seller}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div>
+          <h2>Här var det tomt!</h2>
+        </div>
+      )}
+      <button onClick={createOrder}>Slutför beställning!</button>
+      <button onClick={clearShoppingCart}>Töm kundkorg</button>
     </div>
   );
 };
