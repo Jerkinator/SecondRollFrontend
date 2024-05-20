@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Searchbar from "../components/Searchbar";
 
 import React from "react";
