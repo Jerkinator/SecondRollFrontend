@@ -7,8 +7,10 @@ import Filter from "../components/Filter";
 const Home = () => {
   return (
     <div className="home-container">
-      
+      <div className="game-grid" >     
       <GameAdsComponent />
+      </div> 
+
       <Filter />
     </div>
   );

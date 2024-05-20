@@ -21,15 +21,8 @@ function GameAdsComponent() {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <h1>Alla Spel</h1>
+    
+      <>
       {gameAds.map((g, i) => {
         return (
           <div className="gameAd-container" key={i}>
@@ -41,7 +34,7 @@ function GameAdsComponent() {
           </div>
         );
       })}
-    </div>
+    </>
   );
 }
 

@@ -39,7 +39,17 @@
 
 /*Main grid container for the HOME-page.*/
 .home-container {
-  display: flex;
+  margin-top: 200px;
+  display: grid;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .filter-container img {
