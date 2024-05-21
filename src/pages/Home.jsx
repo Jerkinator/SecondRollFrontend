@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // import Searchbar from "../components/Searchbar";
 // import GameAdsComponent from "../components/GameAdsComponent";
@@ -11,11 +12,16 @@ const Home = () => {
 
   useEffect(() => {
     const getGameAds = async () => {
-      const response = await fetch(
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/gameAds/all`
+      );
+      setGameAds(res.data);
+      console.log(res.data);
+      /*  const response = await fetch(
         `${import.meta.env.VITE_API_URL}/gameAds/all`
       );
       const data = response.json();
-      setGameAds(data);
+      setGameAds(data); */
     };
     getGameAds();
     /*  fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
