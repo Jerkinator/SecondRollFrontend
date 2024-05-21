@@ -7,7 +7,6 @@ import { gameAdImages } from "../data/gameAdImg";
 import Heart from "react-animated-heart";
 import ReusableButton from "../components/ReusableButton";
 
-
 const GameAdDetails = () => {
   const { id } = useParams();
   const [gameAd, setGameAd] = useState([]);
@@ -49,12 +48,6 @@ const GameAdDetails = () => {
   };
 
   const gameAdImg = gameAdImages.find((image) => image.id === gameAd.id);
-  // Outputs the game information into html elements
-  return (
-    <div className="game-details-container">
-      {gameAdImg && <img src={gameAdImg.src} />}
-      <div className="game-descripton">
-
 
   const handleAddToWishlist = async () => {
     setClick(!click);
@@ -77,13 +70,12 @@ const GameAdDetails = () => {
   // Outputs the game information into html elements
   return (
     <div className="game-details-container">
-      <img src={gameAd.photoURL} />
+      {gameAdImg && <img src={gameAdImg.src} />}
 
       <div className="heart-icon">
         <Heart isClick={click} onClick={() => handleAddToWishlist()} />
       </div>
       <div className="gamead-info">
-
         <h2>Titel: {gameAd.title}</h2>
         <h2>Pris: {gameAd.price} kr</h2>
         <p>Beskrivning: {gameAd.description}</p>
