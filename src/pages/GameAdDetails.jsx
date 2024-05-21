@@ -66,22 +66,22 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
-      <div className="title-icon">
-        <h2 className="game-title">Titel: {gameAd.title}</h2>
-        <div className="heart-icon">
-          <Heart isClick={click} onClick={() => handleAddToWishlist()} />
-        </div>
-      </div>
 
-      <h2>Pris: {gameAd.price} kr</h2>
-      <p>Beskrivning: {gameAd.description}</p>
-      <p>Genre: {gameAd.gameGenres}</p>
-      <p>Antal Spelare: {gameAd.gamePlayers}</p>
-      <p>Speltid: {gameAd.gamePlayTime} min</p>
-      <p>Speltillverkare: {gameAd.gameCreator}</p>
-      <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
-      <p>Frakt: {gameAd.shippingCost} kr</p>
-      <p>Säljare: {gameAd.seller}</p>
+      <div className="heart-icon">
+        <Heart isClick={click} onClick={() => handleAddToWishlist()} />
+      </div>
+      <div className="gamead-info">
+        <h2>Titel: {gameAd.title}</h2>
+        <h2>Pris: {gameAd.price} kr</h2>
+        <p>Beskrivning: {gameAd.description}</p>
+        <p>Genre: {gameAd.gameGenres}</p>
+        <p>Antal Spelare: {gameAd.gamePlayers}</p>
+        <p>Speltid: {gameAd.gamePlayTime} min</p>
+        <p>Speltillverkare: {gameAd.gameCreator}</p>
+        <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
+        <p>Frakt: {gameAd.shippingCost} kr</p>
+        <p>Säljare: {gameAd.seller}</p>
+      </div>
 
       <div>
         <ReusableButton onClick={handleAddToCart}>
