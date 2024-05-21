@@ -6,8 +6,9 @@ const Modal = ({ children, close }) => {
     <div className="overlay">
       <div className="content">
         <MdClose className="close" onClick={close} />
+
         {children}
-      </div>
+      </div>{" "}
     </div>
   );
 };

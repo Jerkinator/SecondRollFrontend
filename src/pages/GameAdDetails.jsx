@@ -1,15 +1,17 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReusableButton from "../components/ReusableButton";
 import axios from "axios";
+import Heart from "react-animated-heart";
+import ReusableButton from "../components/ReusableButton";
 
 const GameAdDetails = () => {
   const { id } = useParams();
   const [gameAd, setGameAd] = useState([]);
   const navigate = useNavigate();
+  const [click, setClick] = useState(false);
 
   // fetches the logged in users credentials
-  var user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     const getGameAd = async () => {
@@ -20,44 +22,6 @@ const GameAdDetails = () => {
     };
     getGameAd();
   }, []);
-
-  // Fetches the clicked game's data and puts it in the const gameAd
-  /* fetch(
-      `${import.meta.env.VITE_API_URL}/gameAds/` + id,
-
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => setGameAds(data)); */
-
-  // Uses the fetched users id and puts it in the endpoint of the put request
-  // Then uses the Id of the game and sends it along in the body
-  const handleAddToWishlist = async (e) => {
-    e.preventDefault();
-
-    try {
-      const { data } = await axios.put(
-        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
-        {
-          gameId: gameAd.id,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-
-      // Redirects user to wishlist when game has been added to wishlist.
-      return navigate("/wishlist");
-    } catch (err) {
-      console.log("Error " + err);
-    }
-  };
 
   // Function for adding games to the shoppingcart array
   // First fetches the array from localstorage and puts all the objects into another local array
@@ -80,11 +44,37 @@ const GameAdDetails = () => {
     }
   };
 
+  const handleAddToWishlist = async () => {
+    setClick(!click);
+    try {
+      const {} = await axios.put(
+        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
+        {
+          gameId: gameAd.id,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (err) {
+      console.log("Error " + err);
+    }
+    console.log("Added");
+  };
+
   // Outputs the game information into html elements
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
+
+
+      <div className="heart-icon">
+        <Heart isClick={click} onClick={() => handleAddToWishlist()} />
+      </div>
+      <div className="gamead-info">
+
       <div className="game-descripton">
+
         <h2>Titel: {gameAd.title}</h2>
         <h2>Pris: {gameAd.price} kr</h2>
         <p>Beskrivning: {gameAd.description}</p>
@@ -96,12 +86,20 @@ const GameAdDetails = () => {
         <p>Frakt: {gameAd.shippingCost} kr</p>
         <p>Säljare: {gameAd.seller}</p>
       </div>
+
+
+      <div>
+        <ReusableButton onClick={handleAddToCart}>
+          Lägg i varukorg
+        </ReusableButton>
+
       <div className="gameAd-buttons">
         <button onClick={handleAddToCart}>Lägg i varukorg</button>
 
         <button className="cart-btn" onClick={handleAddToWishlist}>
           Lägg till i önskelista
         </button>
+
       </div>
     </div>
   );

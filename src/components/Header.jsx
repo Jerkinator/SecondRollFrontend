@@ -1,4 +1,5 @@
 import React from "react";
+import AxiosRollDice from "./AxiosRollDice";
 
 function Header() {
   return (
@@ -18,6 +19,9 @@ function Header() {
           <a href="/shoppingcart">
             <img src="images\cart.png" alt="cart image" />
           </a>
+        </div>
+        <div>
+          <AxiosRollDice />
         </div>
       </div>
     </header>
