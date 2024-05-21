@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Heart from "react-animated-heart";
+import ReusableButton from "../components/ReusableButton";
 
 const GameAdDetails = () => {
   const { id } = useParams();
@@ -65,8 +66,8 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
-      <div>
-        <h2>Titel: {gameAd.title}</h2>
+      <div className="title-icon">
+        <h2 className="game-title">Titel: {gameAd.title}</h2>
         <div className="heart-icon">
           <Heart isClick={click} onClick={() => handleAddToWishlist()} />
         </div>
@@ -82,7 +83,11 @@ const GameAdDetails = () => {
       <p>Frakt: {gameAd.shippingCost} kr</p>
       <p>Säljare: {gameAd.seller}</p>
 
-      <button onClick={handleAddToCart}>Lägg i varukorg</button>
+      <div>
+        <ReusableButton onClick={handleAddToCart}>
+          Lägg i varukorg
+        </ReusableButton>
+      </div>
     </div>
   );
 };
