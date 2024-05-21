@@ -8,7 +8,7 @@ const WishlistIcon = ({ gameId }) => {
   const [click, setClick] = useState(false);
   const [shouldDelete, setDelete] = useState(false);
 
-  var user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   const handleRemoveFromWishlist = async () => {
     try {

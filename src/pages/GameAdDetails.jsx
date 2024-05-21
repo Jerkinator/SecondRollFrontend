@@ -1,8 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReusableButton from "../components/ReusableButton";
 import axios from "axios";
-import WishlistIcon from "../components/WishlistIcon";
+import Heart from "react-animated-heart";
 
 const GameAdDetails = () => {
   const { id } = useParams();
@@ -10,7 +9,7 @@ const GameAdDetails = () => {
   const navigate = useNavigate();
 
   // fetches the logged in users credentials
-  var user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     const getGameAd = async () => {
@@ -39,7 +38,7 @@ const GameAdDetails = () => {
 
   // Uses the fetched users id and puts it in the endpoint of the put request
   // Then uses the Id of the game and sends it along in the body
-  const handleAddToWishlist = async (e) => {
+  /* const handleAddToWishlist = async (e) => {
     e.preventDefault();
 
     try {
@@ -58,7 +57,7 @@ const GameAdDetails = () => {
     } catch (err) {
       console.log("Error " + err);
     }
-  };
+  }; */
 
   // Function for adding games to the shoppingcart array
   // First fetches the array from localstorage and puts all the objects into another local array
@@ -81,13 +80,62 @@ const GameAdDetails = () => {
     }
   };
 
+  const [click, setClick] = useState(false);
+  const [shouldDelete, setDelete] = useState(false);
+
+  const handleRemoveFromWishlist = async () => {
+    try {
+      const {} = await axios.delete(
+        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
+        {
+          gameId: gameAd.id,
+        },
+        {
+          credentials: "include",
+        }
+      );
+    } catch (err) {
+      console.log("Error " + err);
+    }
+    console.log("Removed");
+  };
+
+  const handleAddToWishlist = async () => {
+    try {
+      const {} = await axios.put(
+        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
+        {
+          gameId: gameAd.id,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (err) {
+      console.log("Error " + err);
+    }
+    console.log("Added");
+  };
+
+  const handleWishlistOnClick = async () => {
+    setClick(!click);
+    if (!shouldDelete) {
+      await handleAddToWishlist();
+    } else {
+      await handleRemoveFromWishlist();
+    }
+    setDelete(!shouldDelete);
+  };
+
   // Outputs the game information into html elements
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
       <div>
         <h2>Titel: {gameAd.title}</h2>
-        <WishlistIcon />
+        <div className="heart-icon">
+          <Heart isClick={click} onClick={() => handleWishlistOnClick()} />
+        </div>
       </div>
 
       <h2>Pris: {gameAd.price} kr</h2>

@@ -13,8 +13,8 @@ const About = () => {
           enkelt för alla att köpa och sälja brädspel online. Second roll är
           skapat av de unga drivna studenterna Mia, Jerker, Oskar, Teis och
           Erik.
-          <p className="hideme">.</p>
         </p>
+        <p className="hideme">.</p>
       </div>
       <div className="about-box">
         <h2>F.A.Q.</h2>
