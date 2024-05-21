@@ -16,6 +16,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
+
 import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
 
@@ -29,7 +30,6 @@ function App() {
         <Layout> */}
         <Header />
         <Sidebar />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
