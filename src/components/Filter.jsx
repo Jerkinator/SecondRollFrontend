@@ -5,6 +5,7 @@ const Filter = () => {
   const [items, setItems] = useState("");
   const [genre, setGenre] = useState([]);
   const [value, setValue] = useState("");
+  console.log(genre);
 
   useEffect(() => {
     //if the value is === an empty string it doesnt render the fetchGenre function

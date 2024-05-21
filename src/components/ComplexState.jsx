@@ -3,6 +3,7 @@ import FetchWishlist from "./FetchWishlist";
 
 function ComplexState() {
   const [wishlist, setWishlist] = useState([]);
+  console.log(wishlist);
 
   var user = JSON.parse(localStorage.getItem("user"));
 

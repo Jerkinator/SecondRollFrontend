@@ -7,14 +7,12 @@ import Register from "./pages/Register";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
 import CreateGameAd from "./pages/CreateGameAd";
-import GameAds from "./pages/GameAds";
 import Shoppingcart from "./pages/Shoppingcart";
 import RateUser from "./pages/RateUser";
 import SellerProfile from "./pages/SellerProfile";
 import Wishlist from "./pages/Wishlist";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
 import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
@@ -24,6 +22,7 @@ const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
 
 function App() {
   const [cart, setCart] = useState(cartFromLocalStorage);
+  console.log(cart + "this is the cart");
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -34,7 +33,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Sidebar />
-        <Searchbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
@@ -48,7 +47,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/gameads" element={<GameAds />} />
+
           <Route path="/gameads/:id" element={<GameAdDetails />} />
           <Route
             path="/shoppingcart"
@@ -98,3 +97,6 @@ function App() {
 }
 
 export default App;
+
+//       <Route path="/gameads" element={<GameAds />} />
+//   <Searchbar />
