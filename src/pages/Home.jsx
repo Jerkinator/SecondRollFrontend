@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Filter from "../components/Filter";
 import Searchbar from "../components/Searchbar";
+import Filter from "../components/Filter";
 import axios from "axios";
 
 const Home = () => {
