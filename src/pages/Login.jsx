@@ -2,9 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
-
 import ReusableButton from "../components/ReusableButton";
-import { render } from "react-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -20,10 +18,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-     if (!username || !password) {
-       alert("Please fill in username and password.");
-       return;
-     }
+    if (!username || !password) {
+      alert("Please fill in username and password.");
+      return;
+    }
 
     try {
       const { data } = await axios.post(
@@ -51,8 +49,6 @@ const Login = () => {
     }
   };
 
-  
-
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
@@ -66,7 +62,6 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        
 
         <div className="inputBox">
           <label></label>
