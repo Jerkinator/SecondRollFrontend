@@ -8,13 +8,20 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
-  console.log(gameAds);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
+    const getGameAds = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/gameAds/all`
+      );
+      const data = response.json();
+      setGameAds(data);
+    };
+    getGameAds();
+    /*  fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
       .then((response) => response.json())
-      .then((data) => setGameAds(data));
-  }, [gameAds]);
+      .then((data) => setGameAds(data)); */
+  }, []);
 
   return (
     <div className="home-container">
