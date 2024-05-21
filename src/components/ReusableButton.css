@@ -11,4 +11,7 @@
   color: white;
   cursor: pointer;
   border: none;
+  &:hover {
+    background-color: #338790;
+  }
 }

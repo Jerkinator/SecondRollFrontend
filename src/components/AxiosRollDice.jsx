@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
 import ReusableButton from "./ReusableButton";
-import { Link } from "react-router-dom";
+import WishlistIcon from "./WishlistIcon";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -35,7 +36,7 @@ const AxiosRollDice = () => {
           <img src="images\RolltheDice.png" className="rtd-button"></img>
         </button>
       </div>
-      <div>
+      <div className="modal">
         {shouldShow ? (
           <Modal close={() => setShouldShow(false)}>
             <div className="game-info">

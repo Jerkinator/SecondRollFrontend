@@ -1,14 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
 .container {
-  display: flex;
   flex-flow: row wrap;
   box-sizing: border-box;
   margin-left: 20px;
-}
-
-.game-info {
-  font-family: "Exo 2";
 }
 
 .rtd-button {
@@ -20,9 +15,9 @@
 }
 
 .game-img {
-  size: fixed;
-  max-width: 150px;
-  max-height: 250px;
+  display: flex;
+  max-width: 300px;
+  max-height: 450px;
   object-fit: contain;
   padding: 10px;
 }
