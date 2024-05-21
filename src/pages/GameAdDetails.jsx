@@ -21,44 +21,6 @@ const GameAdDetails = () => {
     getGameAd();
   }, []);
 
-  // Fetches the clicked game's data and puts it in the const gameAd
-  /* fetch(
-      `${import.meta.env.VITE_API_URL}/gameAds/` + id,
-
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => setGameAds(data)); */
-
-  // Uses the fetched users id and puts it in the endpoint of the put request
-  // Then uses the Id of the game and sends it along in the body
-  /* const handleAddToWishlist = async (e) => {
-    e.preventDefault();
-
-    try {
-      const { data } = await axios.put(
-        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
-        {
-          gameId: gameAd.id,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-
-      // Redirects user to wishlist when game has been added to wishlist.
-      return navigate("/wishlist");
-    } catch (err) {
-      console.log("Error " + err);
-    }
-  }; */
-
   // Function for adding games to the shoppingcart array
   // First fetches the array from localstorage and puts all the objects into another local array
   // Then inserts that new array into the shoppingcart array in local storage
@@ -149,13 +111,6 @@ const GameAdDetails = () => {
       <p>Säljare: {gameAd.seller}</p>
 
       <button onClick={handleAddToCart}>Lägg i varukorg</button>
-
-      <button className="cart-btn" onClick={handleAddToWishlist}>
-        Lägg till i önskelista
-      </button>
-      <button className="cart-delete" onClick={handleRemoveFromWishlist}>
-        Ta bort från önskelista
-      </button>
     </div>
   );
 };
