@@ -16,15 +16,20 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
+
+import Layout from "./components/Layout";
 import { useState, useEffect } from "react";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        {/* Would be better to implement a layout component on 
+        all pages instead of having somethng set to root. but it messes up
+        our css so we can wait with the change untill we doe our css refactor.
+        <Layout> */}
         <Header />
         <Sidebar />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
@@ -81,7 +86,9 @@ function App() {
             }
           />
         </Routes>
+
         <Footer />
+        {/*  </Layout> */}
       </BrowserRouter>
     </AuthProvider>
   );
