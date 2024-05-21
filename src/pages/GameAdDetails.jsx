@@ -5,15 +5,24 @@ import axios from "axios";
 
 const GameAdDetails = () => {
   const { id } = useParams();
-  const [gameAd, setGameAds] = useState([]);
+  const [gameAd, setGameAd] = useState([]);
   const navigate = useNavigate();
 
   // fetches the logged in users credentials
   var user = JSON.parse(localStorage.getItem("user"));
 
-  // Fetches the clicked game's data and puts it in the const gameAd
   useEffect(() => {
-    fetch(
+    const getGameAd = async () => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/gameAds/${id}`
+      );
+      setGameAd(res.data);
+    };
+    getGameAd();
+  }, []);
+
+  // Fetches the clicked game's data and puts it in the const gameAd
+  /* fetch(
       `${import.meta.env.VITE_API_URL}/gameAds/` + id,
 
       {
@@ -25,8 +34,7 @@ const GameAdDetails = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => setGameAds(data));
-  }, []);
+      .then((data) => setGameAds(data)); */
 
   // Uses the fetched users id and puts it in the endpoint of the put request
   // Then uses the Id of the game and sends it along in the body

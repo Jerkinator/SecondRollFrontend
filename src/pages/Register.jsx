@@ -74,7 +74,6 @@ const Register = () => {
       <form className="register-form" onSubmit={handleSubmit}>
         <h1>Skapa ny användare</h1>
         <div>
-          <label>Username:</label>
           <input
             type="text"
             placeholder="Username"
@@ -84,7 +83,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Lösenord:</label>
           <input
             type="password"
             placeholder="Lösenord"
@@ -94,7 +92,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Email:</label>
           <input
             type="text"
             placeholder="Email"
@@ -104,7 +101,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Förnamn:</label>
           <input
             type="text"
             placeholder="Förnamn"
@@ -114,7 +110,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Efternamn:</label>
           <input
             type="text"
             placeholder="Efternamn"
@@ -124,7 +119,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Telefon:</label>
           <input
             type="text"
             placeholder="Telefon"
@@ -134,7 +128,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Gatuadress:</label>
           <input
             type="text"
             placeholder="Gatuadress"
@@ -144,7 +137,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Postnummer:</label>
           <input
             type="text"
             placeholder="Postnummer"
@@ -154,7 +146,6 @@ const Register = () => {
         </div>
 
         <div>
-          <label>Stad:</label>
           <input
             type="text"
             placeholder="Stad"
@@ -162,7 +153,9 @@ const Register = () => {
             onChange={(e) => setAdress_city(e.target.value)}
           />
         </div>
-        <ReusableButton type="submit">Registrera</ReusableButton>
+        <div className="reg-btn">
+          <ReusableButton type="submit">Registrera</ReusableButton>
+        </div>
       </form>
     </div>
   );

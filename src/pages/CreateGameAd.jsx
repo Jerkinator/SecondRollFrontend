@@ -14,27 +14,14 @@ const CreateGameAd = () => {
   const [gameRecommendedAge, setGameRecommendedAge] = useState("");
   const [gamePlayers, setGamePlayers] = useState("");
   const [gameGenres, setGameGenres] = useState([]);
-  const [photoURL, setPhotoURL] = useState("");
+  // const [photoURL, setPhotoURL] = useState("");
   const [shippingCost, setShippingCost] = useState();
 
   const navigate = useNavigate();
-  var user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(
-      user.id,
-      title,
-      price,
-      description,
-      gameCreator,
-      gamePlayTime,
-      gameRecommendedAge,
-      gamePlayers,
-      gameGenres,
-      photoURL,
-      shippingCost
-    );
 
     if (
       !title ||
@@ -45,7 +32,6 @@ const CreateGameAd = () => {
       !gameRecommendedAge ||
       !gamePlayers ||
       !gameGenres ||
-      !photoURL ||
       !shippingCost
     ) {
       alert("Please fill in all the fields");
@@ -65,7 +51,6 @@ const CreateGameAd = () => {
           gameRecommendedAge,
           gamePlayers,
           gameGenres,
-          photoURL,
           shippingCost,
         },
         {
@@ -96,6 +81,7 @@ const CreateGameAd = () => {
 
         <div>
           <textarea
+            className="textbox"
             type="text"
             placeholder="Beskrivning..."
             value={description}
@@ -201,14 +187,14 @@ const CreateGameAd = () => {
           </select>
         </div>
 
-        <div>
+        {/*  <div>
           <input
             type="text"
             placeholder="Foto-URL"
             value={photoURL}
             onChange={(e) => setPhotoURL(e.target.value)}
           />
-        </div>
+        </div> */}
 
         <div>
           <input
