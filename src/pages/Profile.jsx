@@ -1,5 +1,7 @@
 import UserIcon from "../components/UserIcon";
 import { useState, useEffect } from "react";
+import ReusableButton from "../components/ReusableButton";
+import { Link } from "react-router-dom";
 
 //TODO: flytta in allt från FetchProfile så att datan sätts här
 const initProfile = {
@@ -49,23 +51,31 @@ const Profile = () => {
   return (
     <>
       <div className="userContainer">
-        <h3>{`Hej ${profile.userName}!`}</h3>
-        <h3>{`Förnamn: ${profile.firstName}`}</h3>
-        <h3>{`Efternamn:  ${profile.lastName}`}</h3>
-        <h3>{`Adress: ${profile.adress}`}</h3>
-        <h3>{`Email: ${profile.email}`}</h3>
-        <h3>{`Ditt betyg: ${profile.rating}`}</h3>
-      </div>
+        <div className="user-info">
+          <h3>{`Hej ${profile.userName}!`}</h3>
+          <h3>{`Förnamn: ${profile.firstName}`}</h3>
+          <h3>{`Efternamn:  ${profile.lastName}`}</h3>
+          <h3>{`Adress: ${profile.adress}`}</h3>
+          <h3>{`Email: ${profile.email}`}</h3>
+          <h3>{`Ditt betyg: ${profile.rating}`}</h3>
+        </div>
 
-      <div>
-        <UserIcon
-          images={[
-            "/images/ProfileIcon.png",
-            "/images/ProfileIconBlue.png",
-            "/images/ProfileIconGreen.png",
-            "/images/ProfileIconRed.png",
-          ]}
-        ></UserIcon>
+        <div className="wishlist-btn">
+          <Link to={`/wishlist`}>
+            <ReusableButton>Visa önskelista</ReusableButton>
+          </Link>
+        </div>
+
+        <div className="icon-container">
+          <UserIcon
+            images={[
+              "/images/ProfileIcon.png",
+              "/images/ProfileIconBlue.png",
+              "/images/ProfileIconGreen.png",
+              "/images/ProfileIconRed.png",
+            ]}
+          ></UserIcon>
+        </div>
       </div>
     </>
   );

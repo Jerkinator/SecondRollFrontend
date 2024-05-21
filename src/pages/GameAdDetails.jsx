@@ -153,6 +153,9 @@ const GameAdDetails = () => {
       <button className="cart-btn" onClick={handleAddToWishlist}>
         Lägg till i önskelista
       </button>
+      <button className="cart-delete" onClick={handleRemoveFromWishlist}>
+        Ta bort från önskelista
+      </button>
     </div>
   );
 };

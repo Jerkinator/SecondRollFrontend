@@ -39,10 +39,6 @@ const AxiosRollDice = () => {
       <div className="modal">
         {shouldShow ? (
           <Modal close={() => setShouldShow(false)}>
-            <WishlistIcon
-              className="heart-icon"
-              gameId={result.id}
-            ></WishlistIcon>
             <div className="game-info">
               <div>Titel: {result.title}</div>
               <div>Pris: {result.price} kr</div>

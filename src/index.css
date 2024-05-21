@@ -10,6 +10,7 @@
 .cart-btn {
   padding-bottom: 5px;
   background-color: orange;
+  padding: 10px;
 }
 
 .game-details-container img {
@@ -140,9 +141,19 @@
 }
 
 .iconMan {
-  margin-top: 20px;
+  margin-top: 200px;
   height: 60px;
   width: 55px;
+}
+
+.imageContainer {
+  margin-top: 500px;
+  background-color: blue;
+}
+
+.icon-container {
+  margin-top: 200px;
+  background-color: red;
 }
 
 /* CREATE GAMEAD PAGE */
