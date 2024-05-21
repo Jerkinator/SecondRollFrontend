@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/Searchbar";
-import Filter from "../components/Filter";
 import axios from "axios";
 
 const Home = () => {
@@ -56,7 +55,6 @@ const Home = () => {
   return (
     <div className="home-container">
       <Searchbar />
-      <Filter />
       <div className="game-grid">
         {gameAds.map((g, i) => {
           return (
