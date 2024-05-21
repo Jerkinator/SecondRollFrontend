@@ -1,11 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-// import Searchbar from "../components/Searchbar";
-// import GameAdsComponent from "../components/GameAdsComponent";
-
-// import Filter from "../components/Filter";
+import Searchbar from "../components/Searchbar";
+import Filter from "../components/Filter";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
@@ -25,20 +22,13 @@ const Home = () => {
       );
       setGameAds(res.data);
       console.log(res.data);
-      /*  const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/gameAds/all`
-      );
-      const data = response.json();
-      setGameAds(data); */
     };
     getGameAds();
-    /*  fetch(`${import.meta.env.VITE_API_URL}/gameAds/all`)
-      .then((response) => response.json())
-      .then((data) => setGameAds(data)); */
   }, []);
 
   return (
     <div className="home-container">
+      <Searchbar />
       <div className="game-grid">
         {gameAds.map((g, i) => {
           return (
@@ -52,10 +42,9 @@ const Home = () => {
           );
         })}
       </div>
+      <Filter />
     </div>
   );
 };
 
 export default Home;
-
-//   <Filter />
