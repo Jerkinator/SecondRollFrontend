@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ReusableButton from "../components/ReusableButton";
 import axios from "axios";
+import WishlistIcon from "../components/WishlistIcon";
 
 const GameAdDetails = () => {
   const { id } = useParams();
@@ -84,7 +85,11 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
-      <h2>Titel: {gameAd.title}</h2>
+      <div>
+        <h2>Titel: {gameAd.title}</h2>
+        <WishlistIcon />
+      </div>
+
       <h2>Pris: {gameAd.price} kr</h2>
       <p>Beskrivning: {gameAd.description}</p>
       <p>Genre: {gameAd.gameGenres}</p>
