@@ -9,6 +9,14 @@ import axios from "axios";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
+  console.log(cart + "this is the cart");
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   useEffect(() => {
     const getGameAds = async () => {

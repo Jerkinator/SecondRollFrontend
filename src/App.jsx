@@ -18,16 +18,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
 import { useState, useEffect } from "react";
 
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
-
 function App() {
-  const [cart, setCart] = useState(cartFromLocalStorage);
-  console.log(cart + "this is the cart");
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
   return (
     <AuthProvider>
       <BrowserRouter>
