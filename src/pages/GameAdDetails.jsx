@@ -1,8 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+import { gameAdImages } from "../data/gameAdImg";
+
 import Heart from "react-animated-heart";
 import ReusableButton from "../components/ReusableButton";
+
 
 const GameAdDetails = () => {
   const { id } = useParams();
@@ -44,6 +48,14 @@ const GameAdDetails = () => {
     }
   };
 
+  const gameAdImg = gameAdImages.find((image) => image.id === gameAd.id);
+  // Outputs the game information into html elements
+  return (
+    <div className="game-details-container">
+      {gameAdImg && <img src={gameAdImg.src} />}
+      <div className="game-descripton">
+
+
   const handleAddToWishlist = async () => {
     setClick(!click);
     try {
@@ -71,6 +83,7 @@ const GameAdDetails = () => {
         <Heart isClick={click} onClick={() => handleAddToWishlist()} />
       </div>
       <div className="gamead-info">
+
         <h2>Titel: {gameAd.title}</h2>
         <h2>Pris: {gameAd.price} kr</h2>
         <p>Beskrivning: {gameAd.description}</p>
