@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import FetchWishlist from "./FetchWishlist";
 
+//TODO: flytta allt till WisxhList och sätta datan där
+
 function ComplexState() {
   const [wishlist, setWishlist] = useState([]);
   console.log(wishlist);
