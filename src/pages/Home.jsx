@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Searchbar from "../components/Searchbar";
+import Filter from "../components/Filter";
+import axios from "axios";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
@@ -54,7 +55,8 @@ const Home = () => {
   };
   return (
     <div className="home-container">
-      {/* <Searchbar /> */}
+      <Searchbar />
+      <Filter />
       <div className="game-grid">
         {gameAds.map((g, i) => {
           return (
