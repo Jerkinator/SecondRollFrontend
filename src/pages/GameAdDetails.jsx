@@ -7,6 +7,7 @@ const GameAdDetails = () => {
   const { id } = useParams();
   const [gameAd, setGameAd] = useState([]);
   const navigate = useNavigate();
+  const [click, setClick] = useState(false);
 
   // fetches the logged in users credentials
   let user = JSON.parse(localStorage.getItem("user"));
@@ -42,27 +43,8 @@ const GameAdDetails = () => {
     }
   };
 
-  const [click, setClick] = useState(false);
-  const [shouldDelete, setDelete] = useState(false);
-
-  const handleRemoveFromWishlist = async () => {
-    try {
-      const {} = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
-        {
-          gameId: gameAd.id,
-        },
-        {
-          credentials: "include",
-        }
-      );
-    } catch (err) {
-      console.log("Error " + err);
-    }
-    console.log("Removed");
-  };
-
   const handleAddToWishlist = async () => {
+    setClick(!click);
     try {
       const {} = await axios.put(
         `${import.meta.env.VITE_API_URL}/users/wishlist/` + user.id,
@@ -79,16 +61,6 @@ const GameAdDetails = () => {
     console.log("Added");
   };
 
-  const handleWishlistOnClick = async () => {
-    setClick(!click);
-    if (!shouldDelete) {
-      await handleAddToWishlist();
-    } else {
-      await handleRemoveFromWishlist();
-    }
-    setDelete(!shouldDelete);
-  };
-
   // Outputs the game information into html elements
   return (
     <div className="game-details-container">
@@ -96,7 +68,7 @@ const GameAdDetails = () => {
       <div>
         <h2>Titel: {gameAd.title}</h2>
         <div className="heart-icon">
-          <Heart isClick={click} onClick={() => handleWishlistOnClick()} />
+          <Heart isClick={click} onClick={() => handleAddToWishlist()} />
         </div>
       </div>
 
