@@ -83,11 +83,9 @@ const GameAdDetails = () => {
         <p>Säljare: {gameAd.seller}</p>
       </div>
 
-      <div className="add-to-cart-btn">
-        <ReusableButton onClick={handleAddToCart}>
-          Lägg i varukorg
-        </ReusableButton>
-      </div>
+      <button className="add-to-cart-btn" onClick={handleAddToCart}>
+        Lägg i varukorg
+      </button>
     </div>
   );
 };
