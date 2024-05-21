@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/Searchbar";
 import axios from "axios";
+import { gameAdImages } from "../data/gameAdImg";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
+
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
@@ -57,10 +59,11 @@ const Home = () => {
       <Searchbar />
       <div className="game-grid">
         {gameAds.map((g, i) => {
+          const gameAdImg = gameAdImages.find((image) => image.id === g.id);
           return (
             <div className="gameAd-container" key={i}>
               <Link to={`/gameAds/${g.id}`}>
-                <img src={g.photoURL} />
+                {gameAdImg && <img src={gameAdImg.src} />}
                 <p>Titel: {g.title}</p>
                 <p>Pris: {g.price}</p>
               </Link>
