@@ -67,14 +67,10 @@ const GameAdDetails = () => {
     <div className="game-details-container">
       <img src={gameAd.photoURL} />
 
-
       <div className="heart-icon">
         <Heart isClick={click} onClick={() => handleAddToWishlist()} />
       </div>
       <div className="gamead-info">
-
-      <div className="game-descripton">
-
         <h2>Titel: {gameAd.title}</h2>
         <h2>Pris: {gameAd.price} kr</h2>
         <p>Beskrivning: {gameAd.description}</p>
@@ -87,19 +83,10 @@ const GameAdDetails = () => {
         <p>Säljare: {gameAd.seller}</p>
       </div>
 
-
-      <div>
+      <div className="add-to-cart-btn">
         <ReusableButton onClick={handleAddToCart}>
           Lägg i varukorg
         </ReusableButton>
-
-      <div className="gameAd-buttons">
-        <button onClick={handleAddToCart}>Lägg i varukorg</button>
-
-        <button className="cart-btn" onClick={handleAddToWishlist}>
-          Lägg till i önskelista
-        </button>
-
       </div>
     </div>
   );
