@@ -124,7 +124,7 @@ from #root
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -80px;
+  margin-top: -300px;
   /* min-height: 70vh; */
   font-family: "Exo 2", sans-serif;
 }
@@ -137,9 +137,13 @@ from #root
   height: 480px;
   width: 305px;
   align-items: center;
-  margin-top: -60px;
+  margin-top: 100px;
   margin-bottom: 60px;
   border-radius: 5px;
+}
+
+.registerLink {
+  margin-top: -170px;
 }
 
 .inputBox {
@@ -187,19 +191,8 @@ from #root
 }
 
 .iconMan {
-  margin-top: 200px;
   height: 60px;
   width: 55px;
-}
-
-.imageContainer {
-  margin-top: 500px;
-  background-color: blue;
-}
-
-.icon-container {
-  margin-top: 200px;
-  background-color: red;
 }
 
 /* CREATE GAMEAD PAGE */
@@ -270,13 +263,17 @@ textarea {
 .registerButton {
   width: 200px;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Exo 2";
   text-align: center;
-  background-color: rgba(244, 202, 68, 1);
+  background-color: rgb(233, 194, 67);
   color: black;
   cursor: pointer;
   border: none;
+  border-radius: 5px;
+  &:hover {
+    background-color: #338790;
+  }
 }
 
 .login-form h1 {
@@ -316,6 +313,10 @@ textarea {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #fff, 0 1px 0 #fff;
 }
 
+.registerLink {
+  margin-top: 30px;
+}
+
 .register-form h1 {
   font-family: "Exo 2", sans-serif;
 }
@@ -327,14 +328,17 @@ textarea {
 
 .userContainer {
   background-color: rgba(246, 220, 172, 1);
-  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  height: 420px;
+  height: 450px;
   width: 305px;
   align-items: center;
   border-radius: 5px;
+}
+
+.user-info {
+  padding: 20px;
 }
 
 /*Header*/
@@ -417,10 +421,10 @@ footer {
 
 /*Profile, avatar color switcher.*/
 .imageContainer {
-  margin-top: 80px;
+  margin-top: 50px;
+  margin-left: 150px;
   height: 60px;
   width: 100px;
-  position: absolute;
   top: 50%;
   left: 54%;
   transform: translate(-50%, -50%);

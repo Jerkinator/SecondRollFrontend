@@ -65,8 +65,7 @@ const Profile = () => {
             <ReusableButton>Visa önskelista</ReusableButton>
           </Link>
         </div>
-
-        <div className="icon-container">
+        <div className="icon-man-container">
           <UserIcon
             images={[
               "/images/ProfileIcon.png",
