@@ -2,8 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
-
-import ReusableButton from "../components/ReusableButton";
+import ReusableBtnForm from "../components/ReusableBtnForm";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -154,7 +153,7 @@ const Register = () => {
           />
         </div>
         <div className="reg-btn">
-          <ReusableButton type="submit">Registrera</ReusableButton>
+          <ReusableBtnForm>Registrera</ReusableBtnForm>
         </div>
       </form>
     </div>
