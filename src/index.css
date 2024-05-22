@@ -56,6 +56,13 @@ from #root
   display: grid;
 }
 
+.search-and-roll {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0px;
+}
+
 .game-grid {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
@@ -261,7 +268,7 @@ textarea {
 }
 
 .registerButton {
-  width: 300px;
+  width: 200px;
   height: 50px;
   font-size: 20px;
   font-family: "Exo 2";

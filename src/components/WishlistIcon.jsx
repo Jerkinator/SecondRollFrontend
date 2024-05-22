@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import Heart from "react-animated-heart";
-import "./WishlistIcon.css";
+
 import axios from "axios";
 
 const WishlistIcon = ({ gameId }) => {
