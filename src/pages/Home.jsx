@@ -64,8 +64,8 @@ const Home = () => {
             <div className="gameAd-container" key={i}>
               <Link to={`/gameAds/${g.id}`}>
                 {gameAdImg && <img src={gameAdImg.src} />}
-                <p>Titel: {g.title}</p>
-                <p>Pris: {g.price}</p>
+                <p className="p-one">{g.title}</p>
+                <p className="p-two">{g.price} kr</p>
               </Link>
             </div>
           );

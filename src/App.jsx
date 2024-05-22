@@ -24,10 +24,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        {/* Would be better to implement a layout component on 
-        all pages instead of having somethng set to root. but it messes up
-        our css so we can wait with the change untill we doe our css refactor.
-        <Layout> */}
+        {/* <div className="background"> */}
         <Header />
         <Sidebar />
         <Routes>
@@ -88,7 +85,7 @@ function App() {
         </Routes>
 
         <Footer />
-        {/*  </Layout> */}
+        {/* </div> */}
       </BrowserRouter>
     </AuthProvider>
   );

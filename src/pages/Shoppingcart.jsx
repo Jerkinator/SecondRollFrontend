@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
+import { gameAdImages } from "../data/gameAdImg";
 
 const Shoppingcart = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Shoppingcart = () => {
 
   function clearShoppingCart() {
     localStorage.removeItem("cart");
-    // window.location.reload(false);
+    window.location.reload(true);
     /*  console.log("cart cleared"); */
   }
 
@@ -47,18 +48,23 @@ const Shoppingcart = () => {
   };
 
   return (
-    <div>
-      <div>
-        {cartItems?.map((g) => (
-          <div key={g.id} className="filter-container">
-            <img src={g.photoURL} alt="" />
-            <p>Titel: {g.title}</p>
-            <p>Info: {g.price}</p>
-            <p>Säljare: {g.seller}</p>
-          </div>
-        ))}
-      </div>
-      <button onClick={createOrder}>Slutför beställning!</button>
+    <div className="filter-container">
+      <h3>Varukorg</h3>
+      {cartItems?.map((g) => (
+        <div key={g.id} className="filter-box">
+          <h3>{g.title}</h3>
+          <p>pris: {g.price} kr</p>
+          <p>frakt: {g.shippingCost}</p>
+          <p>total: {g.price + g.shippingCost}</p>
+          <p>Säljare: {g.seller}</p>
+        </div>
+      ))}
+      <button className="cart-btn one" onClick={createOrder}>
+        Slutför beställning!
+      </button>
+      <button className="cart-btn two" onClick={clearShoppingCart}>
+        Töm varukorgen
+      </button>
     </div>
   );
 };
