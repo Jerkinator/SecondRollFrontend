@@ -71,7 +71,6 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       {gameAdImg && <img src={gameAdImg.src} />}
-
       <div className="heart-icon">
         <Heart isClick={click} onClick={() => handleAddToWishlist()} />
       </div>
@@ -87,10 +86,11 @@ const GameAdDetails = () => {
         <p>Frakt: {gameAd.shippingCost} kr</p>
         <p>Säljare: {gameAd.seller}</p>
       </div>
-
-      <button className="add-to-cart-btn" onClick={handleAddToCart}>
-        Lägg i varukorg
-      </button>
+      <div className="reusable-button">
+        <ReusableButton onClick={handleAddToCart}>
+          Lägg i varukorg
+        </ReusableButton>
+      </div>
     </div>
   );
 };
