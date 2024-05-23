@@ -8,7 +8,7 @@ export const gameAdImages = [
     src: "/drakborgen.jpg",
   },
   {
-    id: "664c968346bce95b1d487d88",
+    id: "664d9c1930b94267138d14a6",
     src: "/dungeons.jpg",
   },
   {

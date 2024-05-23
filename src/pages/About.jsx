@@ -18,12 +18,6 @@ const About = () => {
       </div>
       <div className="about-box">
         <h2>F.A.Q.</h2>
-        <h4>- Varför heter ni Second Roll?</h4>
-        <p>
-          Namnet är en skojig ordlek på "second hand", men istället för hand så
-          har vi "roll" som syftar på att kasta tärningar, precis som man gör i
-          brädspel!
-        </p>
         <h4>- Kan jag sälja mina gamla hockeykort här?</h4>
         <p>Nej tack.</p>
         <h4>- Jag gillar inte brädspel, kan jag handla ändå?</h4>
@@ -31,6 +25,8 @@ const About = () => {
           Absolut! Så länge du köper och säljer saker så skiter vi i vilket
           eftersom vi tjänar pengar.
         </p>
+        <h4>- Min man eldade upp alla monopolpengar.</h4>
+        <p>Det var synd, men det är tyvärr inte en fråga.</p>
       </div>
       <div className="about-box">
         <h2>Kontakt</h2>
