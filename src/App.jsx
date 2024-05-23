@@ -18,7 +18,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import GameAdDetails from "./pages/GameAdDetails";
 
 import Layout from "./components/Layout";
-import { useState, useEffect } from "react";
 
 function App() {
   return (

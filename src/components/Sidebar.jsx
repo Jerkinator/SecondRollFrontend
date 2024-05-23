@@ -9,8 +9,8 @@ export default (props) => {
       <a className="menu" href="/login">
         Logga in
       </a>
-      <a className="menu" href="/gameads">
-        Köp
+      <a className="menu" href="/">
+        Hem
       </a>
       <a className="menu" href="/creategamead">
         Sälj
