@@ -222,7 +222,7 @@ from #root
   align-items: center;
   height: 100%;
   font-family: "Exo 2", sans-serif;
-  margin-top: 80px;
+  margin-bottom: 150px;
 }
 
 .gamead-form {
@@ -278,6 +278,10 @@ option {
 
 textarea {
   height: 100px;
+}
+
+.create-ad-btn {
+  margin: 20px;
 }
 
 .registerButton {

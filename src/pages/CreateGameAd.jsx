@@ -68,7 +68,7 @@ const CreateGameAd = () => {
   return (
     <div className="create-gamead-container">
       <form className="gamead-form" onSubmit={handleSubmit}>
-        <h1>Skapa Annons</h1>
+        <h1>Skapa annons</h1>
 
         <div>
           <input
@@ -206,8 +206,9 @@ const CreateGameAd = () => {
             onChange={(e) => setShippingCost(e.target.value)}
           />
         </div>
-
-        <ReusableButton type="submit">Skapa Annons!</ReusableButton>
+        <div className="create-ad-btn">
+          <ReusableButton type="submit">Skapa annons!</ReusableButton>
+        </div>
       </form>
     </div>
   );
