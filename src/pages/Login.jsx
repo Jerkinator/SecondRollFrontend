@@ -81,7 +81,7 @@ const Login = () => {
             className="registerButton"
             onClick={() => navigate("/register")}
           >
-            Registrera
+            Skapa konto
           </button>
         </div>
       </form>

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { gameAdImages } from "../data/gameAdImg";
 import Searchbar from "../components/Searchbar";
 import axios from "axios";
-import { gameAdImages } from "../data/gameAdImg";
+import AxiosRollDice from "../components/AxiosRollDice";
 
 const Home = () => {
   const [gameAds, setGameAds] = useState([]);
@@ -56,7 +57,10 @@ const Home = () => {
   };
   return (
     <div className="home-container">
-      <Searchbar />
+      <div className="search-and-roll">
+        <Searchbar />
+        <AxiosRollDice />
+      </div>
       <div className="game-grid">
         {gameAds.map((g, i) => {
           const gameAdImg = gameAdImages.find((image) => image.id === g.id);
@@ -64,8 +68,8 @@ const Home = () => {
             <div className="gameAd-container" key={i}>
               <Link to={`/gameAds/${g.id}`}>
                 {gameAdImg && <img src={gameAdImg.src} />}
-                <p>Titel: {g.title}</p>
-                <p>Pris: {g.price}</p>
+                <p className="p-one">{g.title}</p>
+                <p className="p-two">{g.price} kr</p>
               </Link>
             </div>
           );

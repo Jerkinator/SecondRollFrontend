@@ -4,7 +4,6 @@ import axios from "axios";
 import "./AxiosRollDice.css";
 import Modal from "./Modal";
 import ReusableButton from "./ReusableButton";
-import WishlistIcon from "./WishlistIcon";
 
 const AxiosRollDice = () => {
   const [rollDice, setRollDice] = useState(false);
@@ -30,7 +29,7 @@ const AxiosRollDice = () => {
   useEffect(() => getRandomGameAd(), [rollDice]);
 
   return (
-    <div className="container">
+    <div className="modal-container">
       <div>
         <button onClick={() => setRollDice(true)}>
           <img src="images\RolltheDice.png" className="rtd-button"></img>

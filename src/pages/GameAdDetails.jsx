@@ -71,26 +71,30 @@ const GameAdDetails = () => {
   return (
     <div className="game-details-container">
       {gameAdImg && <img src={gameAdImg.src} />}
-
       <div className="heart-icon">
         <Heart isClick={click} onClick={() => handleAddToWishlist()} />
       </div>
       <div className="gamead-info">
-        <h2>Titel: {gameAd.title}</h2>
-        <h2>Pris: {gameAd.price} kr</h2>
-        <p>Beskrivning: {gameAd.description}</p>
-        <p>Genre: {gameAd.gameGenres}</p>
-        <p>Antal Spelare: {gameAd.gamePlayers}</p>
-        <p>Speltid: {gameAd.gamePlayTime} min</p>
-        <p>Speltillverkare: {gameAd.gameCreator}</p>
-        <p>Rekommenderad Ålder: {gameAd.gameRecommendedAge}</p>
+        <h2 className="gamead-title">
+          {gameAd.title} <br />
+          {gameAd.price} kr
+        </h2>
+        <p>{gameAd.description}</p>
+        <p>
+          Genre: {gameAd.gameGenres} <br />
+          Antal Spelare: {gameAd.gamePlayers} <br />
+          Speltid: {gameAd.gamePlayTime} min <br />
+          Speltillverkare: {gameAd.gameCreator} <br />
+          Rekommenderad Ålder: {gameAd.gameRecommendedAge}
+        </p>
         <p>Frakt: {gameAd.shippingCost} kr</p>
         <p>Säljare: {gameAd.seller}</p>
       </div>
-
-      <button className="add-to-cart-btn" onClick={handleAddToCart}>
-        Lägg i varukorg
-      </button>
+      <div className="reusable-button">
+        <ReusableButton onClick={handleAddToCart}>
+          Lägg i varukorg
+        </ReusableButton>
+      </div>
     </div>
   );
 };
