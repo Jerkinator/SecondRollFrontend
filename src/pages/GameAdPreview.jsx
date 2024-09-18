@@ -19,7 +19,7 @@ function GameAdPreview(props) {
   useEffect(() => {
     const getGameAd = async () => {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/gameAds/` + game,
+        `${import.meta.env.VITE_API_URL}/gameads/` + game,
         {
           method: "GET",
           headers: {

@@ -6,6 +6,7 @@ import axios from "axios";
 import AxiosRollDice from "../components/AxiosRollDice";
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
   const [gameAds, setGameAds] = useState([]);
 
   const [cart, setCart] = useState(
@@ -18,10 +19,12 @@ const Home = () => {
 
   useEffect(() => {
     const getGameAds = async () => {
+      setLoading(true);
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/gameAds/all`
+        `${import.meta.env.VITE_API_URL}/gameads/all`
       );
       setGameAds(res.data);
+      setLoading(false);
     };
     getGameAds();
   }, []);
@@ -61,20 +64,26 @@ const Home = () => {
         <Searchbar />
         <AxiosRollDice />
       </div>
-      <div className="game-grid">
-        {gameAds.map((g, i) => {
-          const gameAdImg = gameAdImages.find((image) => image.id === g.id);
-          return (
-            <div className="gameAd-container" key={i}>
-              <Link to={`/gameAds/${g.id}`}>
-                {gameAdImg && <img src={gameAdImg.src} />}
-                <p className="p-one">{g.title}</p>
-                <p className="p-two">{g.price} kr</p>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+      {!loading ? (
+        <div className="game-grid">
+          {gameAds.map((g, i) => {
+            const gameAdImg = gameAdImages.find((image) => image.id === g.id);
+            return (
+              <div className="gameAd-container" key={i}>
+                <Link to={`/gameAds/${g.id}`}>
+                  {gameAdImg && <img src={gameAdImg.src} />}
+                  <p className="p-one">{g.title}</p>
+                  <p className="p-two">{g.price} kr</p>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="loadContainer">
+          <div className="loader"></div>
+        </div>
+      )}
       <div className="filter-container">
         <div className="dropdown-filterd">
           <div

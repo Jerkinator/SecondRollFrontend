@@ -6,7 +6,7 @@ function GameAdsComponent() {
 
   useEffect(() => {
     fetch(
-      `${import.meta.env.VITE_API_URL}/gameAds/all`,
+      `${import.meta.env.VITE_API_URL}/gameads/all`,
 
       {
         method: "GET",
@@ -21,12 +21,11 @@ function GameAdsComponent() {
   }, []);
 
   return (
-    
-      <>
+    <>
       {gameAds.map((g, i) => {
         return (
           <div className="gameAd-container" key={i}>
-            <Link to={`/gameAds/${g.id}`} >
+            <Link to={`/gameAds/${g.id}`}>
               <img src={g.photoURL} />
               <p>Titel: {g.title}</p>
               <p>Pris: {g.price}</p>

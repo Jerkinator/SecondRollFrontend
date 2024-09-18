@@ -542,6 +542,31 @@ footer {
   color: rgba(246, 220, 172, 1);
 }
 
+.loadContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0vh;
+}
+
+.loader {
+  border: 16px solid white;
+  border-top: 16px solid orange;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 391px) {
   .game-grid {
     display: grid;

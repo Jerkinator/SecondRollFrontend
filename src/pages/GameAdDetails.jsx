@@ -19,7 +19,7 @@ const GameAdDetails = () => {
   useEffect(() => {
     const getGameAd = async () => {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/gameAds/${id}`
+        `${import.meta.env.VITE_API_URL}/gameads/${id}`
       );
       setGameAd(res.data);
     };
